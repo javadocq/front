@@ -1,5 +1,6 @@
 "use client";
 
+import { ThemeProvider } from "next-theme";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
@@ -31,20 +32,22 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Header />
-        {/* 자식 컴포넌트가 마운트 되거나 언마운트될 때 애니메이션 처리 */}
-        <AnimatePresence>
-          <motion.div
-            key={pathname} // 현재 경로가 변경되면 새로운 key가 적용
-            variants={variants}
-            initial="hidden"
-            animate="enter"
-            exit="hidden"
-            transition={{ type: "tween", duration: 1 }}
-          >
-            {children}
-          </motion.div>
-        </AnimatePresence>
+        <ThemeProvider attribute="class">
+          <Header />
+          {/* 자식 컴포넌트가 마운트 되거나 언마운트될 때 애니메이션 처리 */}
+          <AnimatePresence>
+            <motion.div
+              key={pathname} // 현재 경로가 변경되면 새로운 key가 적용
+              variants={variants}
+              initial="hidden"
+              animate="enter"
+              exit="hidden"
+              transition={{ type: "tween", duration: 1 }}
+            >
+              {children}
+            </motion.div>
+          </AnimatePresence>
+        </ThemeProvider>
       </body>
     </html>
   );

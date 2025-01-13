@@ -2,24 +2,36 @@
 "use client";
 
 import Image from "next/image";
-import Logo from "../../../public/logo.svg";
-import Toggle from "../../../public/toggle.svg";
+import useTheme from "next-theme";
+import Logo from "@/../public/logo.svg";
+import ToggleDark from "@/../public/toggle_light.svg";
+import ToggleLight from "@/../public/toggle_dark.svg";
 import Link from "next/link";
 import { useState } from "react";
+import Dark from "@/../public/darkMode_moon.svg";
+import Light from "@/../public/lightMode_sun.svg";
 
 export default function Header() {
+  const { theme, setTheme } = useTheme();
   const [toggle, setToggle] = useState<boolean>(false);
   return (
-    <nav className="flex w-screen box-border border-2 px-10 justify-between items-center h-20">
+    <nav className="flex w-screen box-border border-b-2 px-10 justify-between items-center h-20">
       <div className="flex gap-3">
         <Image src={Logo} alt="로고" />
         <Link href="/" className="text-2xl  max-md: base">
           JAVADOCQ_BLOG
         </Link>
       </div>
-      <div className="flex">
-        {/* max-lg:hidden : 화면이 1024px 이하 일때 안 보이게 하기 */}
-        <div className="max-lg:hidden flex text-lg gap-6">
+      <div className="flex gap-6">
+        <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+          {theme === "dark" ? (
+            <Image src={Light} alt="라이트모드" />
+          ) : (
+            <Image src={Dark} alt="다크모드" />
+          )}
+        </button>
+        {/* max-lg:hidden : 화면이 1024px 미만 일때 안 보이게 하기 */}
+        <div className="max-lg:hidden flex items-center text-lg gap-6">
           <Link href="/project" className="hover:text-customBlue">
             PROJECT
           </Link>
@@ -37,11 +49,20 @@ export default function Header() {
           </Link>
         </div>
         {/* lg:hiddne : 화면이 1024px 이상 일때 안 보이게 하기 */}
-        <div
-          className="lg:hidden text-2xl relative h-10 cursor-pointer"
-          onClick={() => setToggle(!toggle)}
-        >
-          <Image src={Toggle} alt="토글" />
+        <div className="lg:hidden flex gap-6 items-center text-2xl relative h-20 cursor-pointer">
+          {theme === "dark" ? (
+            <Image
+              src={ToggleLight}
+              alt="토글 라이트"
+              onClick={() => setToggle(!toggle)}
+            />
+          ) : (
+            <Image
+              src={ToggleDark}
+              alt="토글 다크"
+              onClick={() => setToggle(!toggle)}
+            />
+          )}
         </div>
         {/* lg:hiddne : 화면이 1024px 이상 일때 안 보이게 하기 */}
         {toggle ? (
