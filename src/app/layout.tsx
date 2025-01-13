@@ -6,6 +6,7 @@ import "./globals.css";
 import Header from "./components/Header";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 
 const variants = {
   hidden: { opacity: 0, x: 0, y: 200 },
@@ -27,6 +28,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const pathname = usePathname();
+
+  useEffect(() => {
+    const theme = window.localStorage.getItem("theme");
+    if (theme) {
+      document.documentElement.className = theme;
+    } else {
+      document.documentElement.className = "light";
+    }
+  }, []);
+
   return (
     <html lang="en">
       <body
