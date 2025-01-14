@@ -52,7 +52,6 @@ export default function RootLayout({
               variants={variants}
               initial="hidden"
               animate="enter"
-              exit="hidden"
               transition={{ type: "tween", duration: 1 }}
             >
               {children}
