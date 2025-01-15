@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Filter from "./Filter";
 import axios from "axios";
+import ProjectModal from "./ProjectModal";
 
 interface ProjectProps {
   id: number;
@@ -15,7 +16,9 @@ interface ProjectProps {
 
 export default function Project() {
   const [selectedFilter, setSelectedFilter] = useState<string>("전체");
+  const [modal, setModal] = useState<boolean>(false);
   const [projects, setProjects] = useState<ProjectProps[]>([]);
+  const [projectId, setProjectId] = useState<number>(0);
 
   useEffect(() => {
     const FetchProjectGet = async () => {
@@ -29,6 +32,12 @@ export default function Project() {
     };
     FetchProjectGet();
   }, []);
+
+  function handleSetProject(projectId: number) {
+    setModal(true);
+    setProjectId(projectId);
+  }
+
   return (
     <div className="mt-16 w-10/12 flex flex-col items-center pb-20">
       <Filter filter={selectedFilter} setFilter={setSelectedFilter} />
@@ -37,7 +46,8 @@ export default function Project() {
           return (
             <div
               key={project.id}
-              className="box-border border-2 w-72 h-64 rounded-lg flex flex-col items-center bg-zinc-100 dark:bg-zinc-400"
+              onClick={() => handleSetProject(project.id)}
+              className="box-border border-2 w-72 h-64 rounded-lg flex flex-col items-center bg-zinc-100 dark:bg-zinc-400 cursor-pointer"
             >
               <div className="box-border border-2 border-black dark:border-white w-64 h-32 rounded-lg flex items-center justify-center mt-4">
                 <Image
@@ -70,6 +80,7 @@ export default function Project() {
           );
         })}
       </div>
+      {modal && <ProjectModal id={projectId} setModal={setModal} />}
     </div>
   );
 }
