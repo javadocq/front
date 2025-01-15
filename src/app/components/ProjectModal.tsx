@@ -64,7 +64,6 @@ export default function ProjectModal({ id, setModal }: ProjectModalProps) {
                   d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
                 />
               </svg>
-              <span className="sr-only">Close modal</span>
             </button>
           </div>
           <div className="p-4 md:p-5 space-y-4 flex flex-col items-center">
@@ -85,7 +84,7 @@ export default function ProjectModal({ id, setModal }: ProjectModalProps) {
                 <div
                   key={index}
                   className="box-border flex items-center justify-center 
-                     dark:∂bg-slate-50 dark:text-black bg-zinc-400 text-gray-700 
+                     dark:∂bg-slate-50 dark:text-black bg-zinc-400 dark:bg-white text-gray-700 
                      rounded-3xl font-bold text-xs p-1"
                 >
                   {category}
@@ -96,11 +95,14 @@ export default function ProjectModal({ id, setModal }: ProjectModalProps) {
           <div className="flex flex-col pl-5 pb-4 gap-2 font-bold">
             <Link
               href={project?.github || ""}
-              className="hover:text-customBlue"
+              className="hover:text-customBlue w-96"
             >
               깃허브 주소 : {project?.github}
             </Link>
-            <Link href={project?.velog || ""} className="hover:text-customBlue">
+            <Link
+              href={project?.velog || ""}
+              className="hover:text-customBlue w-96"
+            >
               velog 주소 : {project?.velog}
             </Link>
           </div>
