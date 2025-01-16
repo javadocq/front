@@ -4,6 +4,7 @@ export async function GET() {
   const dummyData = [
     {
       id: 1,
+      type: "React",
       img: "/dummyImg.png",
       name: "프로젝트 이름",
       introduce:
@@ -12,6 +13,7 @@ export async function GET() {
     },
     {
       id: 2,
+      type: "React",
       img: "/dummyImg.png",
       name: "프로젝트 이름",
       introduce:
@@ -20,6 +22,7 @@ export async function GET() {
     },
     {
       id: 3,
+      type: "TypeScript",
       img: "/dummyImg.png",
       name: "프로젝트 이름",
       introduce:
@@ -28,6 +31,7 @@ export async function GET() {
     },
     {
       id: 4,
+      type: "TypeScript",
       img: "/dummyImg.png",
       name: "프로젝트 이름",
       introduce:
@@ -36,6 +40,7 @@ export async function GET() {
     },
     {
       id: 5,
+      type: "TypeScript",
       img: "/dummyImg.png",
       name: "프로젝트 이름",
       introduce:
@@ -44,6 +49,7 @@ export async function GET() {
     },
     {
       id: 6,
+      type: "Next",
       img: "/dummyImg.png",
       name: "프로젝트 이름",
       introduce:

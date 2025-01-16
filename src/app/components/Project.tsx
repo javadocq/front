@@ -8,6 +8,7 @@ import ProjectModal from "./ProjectModal";
 
 interface ProjectProps {
   id: number;
+  type: string;
   img: string;
   name: string;
   introduce: string;
@@ -18,6 +19,7 @@ export default function Project() {
   const [selectedFilter, setSelectedFilter] = useState<string>("전체");
   const [modal, setModal] = useState<boolean>(false);
   const [projects, setProjects] = useState<ProjectProps[]>([]);
+  const [filteredProjects, setFilteredProjects] = useState<ProjectProps[]>([]);
   const [projectId, setProjectId] = useState<number>(0);
 
   useEffect(() => {
@@ -25,12 +27,23 @@ export default function Project() {
       try {
         const response = await axios.get("/api/dummy");
         setProjects(response.data);
+        setFilteredProjects(response.data);
       } catch (error) {
         console.log(error);
       }
     };
     FetchProjectGet();
   }, []);
+
+  useEffect(() => {
+    if (selectedFilter === "전체") {
+      setFilteredProjects(projects);
+    } else {
+      setFilteredProjects(
+        projects.filter((project) => project.type.includes(selectedFilter))
+      );
+    }
+  }, [selectedFilter, projects]);
 
   function handleSetProject(projectId: number) {
     setModal(true);
@@ -41,7 +54,7 @@ export default function Project() {
     <div className="mt-16 w-10/12 flex flex-col items-center pb-20">
       <Filter filter={selectedFilter} setFilter={setSelectedFilter} />
       <div className="grid grid-cols-4 gap-16 mt-16 max-[1380px]:grid-cols-3 max-[1080px]:grid-cols-2 max-[765px]:grid-cols-1">
-        {projects.map((project) => {
+        {filteredProjects.map((project) => {
           return (
             <div
               key={project.id}
