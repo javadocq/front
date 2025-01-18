@@ -41,9 +41,6 @@ export default function Header() {
           <Link href="/about" className="hover:text-customBlue">
             ABOUT
           </Link>
-          <Link href="/contact" className="hover:text-customBlue">
-            CONTACT
-          </Link>
           <Link href="/community" className="hover:text-customBlue">
             COMMUNITY
           </Link>
@@ -84,12 +81,6 @@ export default function Header() {
               className="hover:text-customBlue"
             >
               <Link href="/about">ABOUT</Link>
-            </li>
-            <li
-              onClick={() => setToggle(false)}
-              className="hover:text-customBlue"
-            >
-              <Link href="/contact">CONTACT</Link>
             </li>
             <li
               onClick={() => setToggle(false)}

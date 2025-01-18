@@ -59,7 +59,7 @@ export default function Project() {
             <div
               key={project.id}
               onClick={() => handleSetProject(project.id)}
-              className="box-border border-2 w-72 h-64 pb-2 rounded-lg flex flex-col items-center bg-zinc-100 dark:bg-gray-700 cursor-pointer"
+              className="box-border border-2 w-72 h-64 pb-2 rounded-lg flex flex-col items-center bg-zinc-100 dark:bg-gray-400 cursor-pointer"
             >
               <div className="box-border border-2 border-black dark:border-white w-64 h-32 rounded-lg flex items-center justify-center mt-4">
                 <Image
