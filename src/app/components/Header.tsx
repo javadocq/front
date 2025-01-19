@@ -17,7 +17,9 @@ export default function Header() {
   return (
     <nav className="flex w-screen box-border border-b-2 px-10 justify-between items-center h-20">
       <div className="flex gap-3 items-center w-2/4">
-        <Image src={Logo} alt="로고" />
+        <Link href="/">
+          <Image src={Logo} alt="로고" />
+        </Link>
         <Link href="/" className="text-xl max-[416px]:hidden">
           JAVADOCQ_BLOG
         </Link>

@@ -1,7 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const comments: { id: number; name: string; comment: string }[] = [];
-let commentId: number = 1;
+const comments: { id: number; name: string; comment: string; date: Date }[] = [
+  {
+    id: 1,
+    name: "javadocq",
+    comment: "댓글 많이 달아주세요!",
+    date: new Date("2025-01-19T23:11:00"),
+  },
+];
+let commentId: number = 2;
 
 const REQUEST_LIMIT = 1; // 시간당 최대 요청 수
 const TIME_WINDOW = 60 * 5000; // 5분
@@ -50,7 +57,7 @@ export async function POST(req: NextRequest) {
       id: commentId++,
       name: name,
       comment: comment,
-      date: Date.now(),
+      date: new Date(),
     };
 
     comments.push(message);

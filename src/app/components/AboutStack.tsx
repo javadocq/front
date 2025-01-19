@@ -30,7 +30,7 @@ export default function AboutStack({ theme }: ThemeProp) {
             Next.js
           </span>
         </p>
-        <p className="font-bold flex flex-wrap gap-2">
+        <p className="font-bold flex flex-wrap gap-2 items-center">
           Back :{" "}
           <span className="box-border border-2 rounded-lg p-1 bg-lime-400">
             Django

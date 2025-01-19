@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <div className="mt-16 w-screen flex flex-col items-center pb-20 px-10">
       <CommentInfo />
-      <Comment />
+      <Comment comments={comments} setComments={setComments} />
     </div>
   );
 }
