@@ -16,9 +16,9 @@ export default function Header() {
   const [toggle, setToggle] = useState<boolean>(false);
   return (
     <nav className="flex w-screen box-border border-b-2 px-10 justify-between items-center h-20">
-      <div className="flex gap-3">
+      <div className="flex gap-3 items-center w-2/4">
         <Image src={Logo} alt="로고" />
-        <Link href="/" className="text-2xl  max-md: base">
+        <Link href="/" className="text-xl max-[416px]:hidden">
           JAVADOCQ_BLOG
         </Link>
       </div>
