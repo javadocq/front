@@ -95,7 +95,7 @@ export default function AboutMe({ theme }: ThemeProp) {
         )}
 
         <p className="mt-6 text-xl font-bold">한양대학교 ERICA</p>
-        <p className="mt-2 text-xl font-bold">컴퓨터학부 3학년</p>
+        <p className="mt-2 text-xl font-bold">컴퓨터학부</p>
       </div>
     </div>
   );

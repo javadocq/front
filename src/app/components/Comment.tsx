@@ -45,7 +45,7 @@ export default function Comment({ comments, setComments }: CommentProps) {
 
   return (
     <div className="w-screen flex flex-col items-center">
-      <div className="box-border border-2 flex flex-col gap-2 w-8/12 h-32 bg-zinc-100 dark:bg-gray-400 pt-2 min-w-[300px]">
+      <div className="box-border border-2 flex flex-col gap-2 w-8/12 h-32 bg-zinc-100 dark:bg-gray-400 pt-2 min-w-[300px] rounded-lg">
         <textarea
           onChange={(e) => setComment(e.target.value)}
           placeholder="내용을 입력해주세요."
@@ -61,7 +61,7 @@ export default function Comment({ comments, setComments }: CommentProps) {
           </div>
           <button
             onClick={() => handlePost(name, comment)}
-            className="bg-black text-white dark:text-customBlue text-sm flex-shrink-0 h-9 w-2/12"
+            className="bg-black text-white dark:text-customBlue text-sm flex-shrink-0 h-9 w-2/12 rounded-br-lg"
           >
             등록
           </button>
@@ -72,7 +72,7 @@ export default function Comment({ comments, setComments }: CommentProps) {
         return (
           <div
             key={comment.id}
-            className="gap-2 w-8/12 h-auto bg-zinc-100 dark:bg-gray-400 py-4 px-4 min-w-[300px] border-b-2"
+            className="gap-2 w-8/12 h-auto bg-zinc-100 dark:bg-gray-400 py-4 px-4 min-w-[300px] border-b-2 rounded-lg"
           >
             <div className="text-lg font-bold">{comment.name}</div>
             <div className="mt-1 text-gray-400 font-bold">

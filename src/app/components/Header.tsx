@@ -65,7 +65,7 @@ export default function Header() {
         </div>
         {/* lg:hiddne : 화면이 1024px 이상 일때 안 보이게 하기 */}
         {toggle ? (
-          <ul className="lg:hidden flex flex-col text-xl fixed top-24 right-5 items-center gap-2 box-border border-4 px-4 py-2">
+          <ul className="lg:hidden flex flex-col text-xl fixed top-24 right-5 items-center gap-2 box-border border-4 px-4 py-2 z-10 bg-gray-400">
             <li
               onClick={() => setToggle(false)}
               className="hover:text-customBlue"
