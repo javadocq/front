@@ -38,12 +38,12 @@ export default async function Home() {
               className="box-border border-2 w-72 h-60 pb-2 rounded-lg flex flex-col items-center bg-zinc-100 dark:bg-gray-400 cursor-pointer"
             >
               <div className="box-border border-2 border-black dark:border-white w-64 h-16 rounded-lg flex items-center justify-center mt-4 px-3">
-                <p className="text-base font-bold text-left w-64 mt-1 text-center">
+                <p className="text-base font-bold text-left w-64 mt-1 text-center line-clamp-2">
                   {post.title}
                 </p>
               </div>
 
-              <p className="text-base text-left w-64 mt-4  line-clamp-3">
+              <p className="text-base text-left w-64 mt-4 line-clamp-3">
                 {post.summary}
               </p>
               <div className="box-border border-2 w-full mt-4"></div>
