@@ -24,7 +24,7 @@ export default function ProjectModal({ id, setModal }: ProjectModalProps) {
   useEffect(() => {
     const FetchProjectGet = async () => {
       try {
-        const response = await axios.get(`/api/dummy/${id}`);
+        const response = await axios.get(`/api/projects/${id}`);
         setProject(response.data);
       } catch (error) {
         console.log(error);

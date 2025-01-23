@@ -25,7 +25,7 @@ export default function Project() {
   useEffect(() => {
     const FetchProjectGet = async () => {
       try {
-        const response = await axios.get("/api/dummy");
+        const response = await axios.get("/api/projects");
         setProjects(response.data);
         setFilteredProjects(response.data);
       } catch (error) {

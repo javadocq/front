@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 const dummyData = [
   {
     id: 1,
-    img: "/dummyImg.png",
+    img: "/project/dummyImg.png",
     name: "프로젝트 이름",
     introduce:
       "프로젝트 소개 문구입니다. 이러한 기능을 사용해서 만든 프로젝트입니다. 프로젝트 소개 문구입니다. 이러한 기능을 사용해서 만든 프로젝트입니다. 프로젝트 소개 문구입니다. 이러한 기능을 사용해서 만든 프로젝트입니다.",
@@ -13,7 +13,7 @@ const dummyData = [
   },
   {
     id: 2,
-    img: "/dummyImg.png",
+    img: "/project/dummyImg.png",
     name: "프로젝트 이름",
     introduce:
       "프로젝트 소개 문구입니다. 이러한 기능을 사용해서 만든 프로젝트입니다. 프로젝트 소개 문구입니다. 이러한 기능을 사용해서 만든 프로젝트입니다. 프로젝트 소개 문구입니다. 이러한 기능을 사용해서 만든 프로젝트입니다.",
@@ -23,7 +23,7 @@ const dummyData = [
   },
   {
     id: 3,
-    img: "/dummyImg.png",
+    img: "/project/dummyImg.png",
     name: "프로젝트 이름",
     introduce:
       "프로젝트 소개 문구입니다. 이러한 기능을 사용해서 만든 프로젝트입니다. 프로젝트 소개 문구입니다. 이러한 기능을 사용해서 만든 프로젝트입니다. 프로젝트 소개 문구입니다. 이러한 기능을 사용해서 만든 프로젝트입니다.",
@@ -33,7 +33,7 @@ const dummyData = [
   },
   {
     id: 4,
-    img: "/dummyImg.png",
+    img: "/project/dummyImg.png",
     name: "프로젝트 이름",
     introduce:
       "프로젝트 소개 문구입니다. 이러한 기능을 사용해서 만든 프로젝트입니다. 프로젝트 소개 문구입니다. 이러한 기능을 사용해서 만든 프로젝트입니다. 프로젝트 소개 문구입니다. 이러한 기능을 사용해서 만든 프로젝트입니다.",
@@ -43,7 +43,7 @@ const dummyData = [
   },
   {
     id: 5,
-    img: "/dummyImg.png",
+    img: "/project/dummyImg.png",
     name: "프로젝트 이름",
     introduce:
       "프로젝트 소개 문구입니다. 이러한 기능을 사용해서 만든 프로젝트입니다. 프로젝트 소개 문구입니다. 이러한 기능을 사용해서 만든 프로젝트입니다. 프로젝트 소개 문구입니다. 이러한 기능을 사용해서 만든 프로젝트입니다.",
@@ -53,7 +53,7 @@ const dummyData = [
   },
   {
     id: 6,
-    img: "/dummyImg.png",
+    img: "/project/dummyImg.png",
     name: "프로젝트 이름",
     introduce:
       "프로젝트 소개 문구입니다. 이러한 기능을 사용해서 만든 프로젝트입니다. 프로젝트 소개 문구입니다. 이러한 기능을 사용해서 만든 프로젝트입니다. 프로젝트 소개 문구입니다. 이러한 기능을 사용해서 만든 프로젝트입니다.",

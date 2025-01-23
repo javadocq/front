@@ -3,13 +3,13 @@
 
 import Image from "next/image";
 import useTheme from "next-theme";
-import Logo from "@/../public/logo.svg";
-import ToggleDark from "@/../public/toggle_light.svg";
-import ToggleLight from "@/../public/toggle_dark.svg";
+import Logo from "@/../public/header/logo.svg";
+import ToggleDark from "@/../public/header/toggle_light.svg";
+import ToggleLight from "@/../public/header/toggle_dark.svg";
 import Link from "next/link";
 import { useState } from "react";
-import Dark from "@/../public/darkMode_moon.svg";
-import Light from "@/../public/lightMode_sun.svg";
+import Dark from "@/../public/header/darkMode_moon.svg";
+import Light from "@/../public/header/lightMode_sun.svg";
 
 export default function Header() {
   const { theme, setTheme } = useTheme();

@@ -5,7 +5,7 @@ export async function GET() {
     {
       id: 1,
       type: "React",
-      img: "/dummyImg.png",
+      img: "/project/dummyImg.png",
       name: "프로젝트 이름",
       introduce:
         "프로젝트 소개 문구입니다. 이러한 기능을 사용해서 만든 프로젝트입니다.",
@@ -14,7 +14,7 @@ export async function GET() {
     {
       id: 2,
       type: "React",
-      img: "/dummyImg.png",
+      img: "/project/dummyImg.png",
       name: "프로젝트 이름",
       introduce:
         "프로젝트 소개 문구입니다. 이러한 기능을 사용해서 만든 프로젝트입니다.",
@@ -23,7 +23,7 @@ export async function GET() {
     {
       id: 3,
       type: "TypeScript",
-      img: "/dummyImg.png",
+      img: "/project/dummyImg.png",
       name: "프로젝트 이름",
       introduce:
         "프로젝트 소개 문구입니다. 이러한 기능을 사용해서 만든 프로젝트입니다.",
@@ -32,7 +32,7 @@ export async function GET() {
     {
       id: 4,
       type: "TypeScript",
-      img: "/dummyImg.png",
+      img: "/project/dummyImg.png",
       name: "프로젝트 이름",
       introduce:
         "프로젝트 소개 문구입니다. 이러한 기능을 사용해서 만든 프로젝트입니다.",
@@ -41,7 +41,7 @@ export async function GET() {
     {
       id: 5,
       type: "TypeScript",
-      img: "/dummyImg.png",
+      img: "/project/dummyImg.png",
       name: "프로젝트 이름",
       introduce:
         "프로젝트 소개 문구입니다. 이러한 기능을 사용해서 만든 프로젝트입니다.",
@@ -50,7 +50,7 @@ export async function GET() {
     {
       id: 6,
       type: "Next",
-      img: "/dummyImg.png",
+      img: "/project/dummyImg.png",
       name: "프로젝트 이름",
       introduce:
         "프로젝트 소개 문구입니다. 이러한 기능을 사용해서 만든 프로젝트입니다.",
