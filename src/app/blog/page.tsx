@@ -25,7 +25,7 @@ export default async function Home() {
   const posts = await fetchVelogPosts();
 
   return (
-    <div className="w-screen flex flex-col items-center">
+    <div className="w-screen flex flex-col items-center pb-[20px]">
       <div className="box-border flex items-center justify-center bg-black dark:bg-slate-50 w-56 h-16 rounded-lg mt-10">
         <p className="text-white dark:text-black text-3xl">BLOG</p>
       </div>

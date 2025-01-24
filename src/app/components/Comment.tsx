@@ -6,16 +6,21 @@ import { useState } from "react";
 interface CommentsProps {
   id: number;
   name: string;
-  comment: string;
-  date: Date;
+  content: string;
+  date: string;
 }
 
 interface CommentProps {
   comments: CommentsProps[];
-  setComments: React.Dispatch<React.SetStateAction<CommentsProps[]>>;
+  changeVar: boolean;
+  setChangeVar: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default function Comment({ comments, setComments }: CommentProps) {
+export default function Comment({
+  comments,
+  changeVar,
+  setChangeVar,
+}: CommentProps) {
   const [name, setName] = useState<string>("");
   const [comment, setComment] = useState<string>("");
 
@@ -29,15 +34,20 @@ export default function Comment({ comments, setComments }: CommentProps) {
   function handlePost(name: string, comment: string) {
     const fetchPostComment = async () => {
       try {
-        const response = await axios.post("/api/comments", {
-          name: name,
-          comment: comment,
-        });
-        setComments(response.data);
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const response = await axios.post(
+          "https://port-0-back-m5f0l3cp0d025088.sel4.cloudtype.app/community/",
+          {
+            name: name,
+            content: comment,
+          }
+        );
+
+        setChangeVar(!changeVar);
         setName("");
         setComment("");
       } catch (error) {
-        console.log(error);
+        console.error(error);
       }
     };
     fetchPostComment();
@@ -75,10 +85,10 @@ export default function Comment({ comments, setComments }: CommentProps) {
             className="gap-2 w-8/12 h-auto bg-zinc-100 dark:bg-gray-400 py-4 px-4 min-w-[300px] border-b-2 rounded-lg"
           >
             <div className="text-lg font-bold">{comment.name}</div>
-            <div className="mt-1 text-gray-400 font-bold">
-              {formatDate(comment.date.toLocaleString())}
+            <div className="mt-1 text-gray-700 font-bold text-[14px]">
+              {formatDate(comment.date)}
             </div>
-            <div className="mt-4">{comment.comment}</div>
+            <div className="mt-4">{comment.content}</div>
           </div>
         );
       })}
