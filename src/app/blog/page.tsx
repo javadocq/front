@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -10,19 +12,18 @@ interface Post {
   profile: string;
 }
 
-async function fetchVelogPosts(): Promise<Post[]> {
-  const response = await fetch("/api/velog");
-  try {
-    const posts = await response.json();
-    return posts;
-  } catch (error) {
-    console.error("Failed to parse JSON", error);
-    return [];
-  }
-}
+export default function Home() {
+  const [posts, setPosts] = useState<Post[]>([]);
 
-export default async function Home() {
-  const posts = await fetchVelogPosts();
+  useEffect(() => {
+    const fetchVelogPosts = async () => {
+      const response = await fetch("/api/velog");
+      const data = await response.json();
+      setPosts(data);
+    };
+
+    fetchVelogPosts();
+  }, []);
 
   return (
     <div className="w-screen flex flex-col items-center pb-[20px]">
