@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextResponse, NextRequest } from "next/server";
 
 const dummyData = [
   {
@@ -31,10 +31,10 @@ const dummyData = [
 ];
 
 export async function GET(
-  req: Request,
+  req: NextRequest,
   { params }: { params: { id: string } }
 ) {
-  const id = parseInt(params.id);
+  const id = parseInt(params.id, 10);
   const project = dummyData.find((item) => item.id === id);
 
   if (project) {
