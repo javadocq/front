@@ -7,7 +7,7 @@ export default function Filter({ filter, setFilter }: FilterProps) {
   const category: string[] = ["전체", "React", "TypeScript", "Next"];
 
   return (
-    <div className="flex gap-4">
+    <div className="flex gap-4 max-[467px]:grid max-[467px]:grid-cols-2">
       {category.map((name, index) => {
         return (
           <button

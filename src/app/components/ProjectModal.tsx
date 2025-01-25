@@ -14,7 +14,7 @@ interface ProjectProp {
   name: string;
   introduce: string;
   function: string[];
-  github: string;
+  deploy: string;
   velog: string;
 }
 
@@ -27,7 +27,10 @@ export default function ProjectModal({ id, setModal }: ProjectModalProps) {
         const response = await axios.get(`/api/projects/${id}`);
         setProject(response.data);
       } catch (error) {
-        console.log(error);
+        console.error("An unexpected error occurred", error);
+        throw new Error(
+          "서비스에 문제가 발생했습니다. 잠시 후 다시 시도해주세요."
+        );
       }
     };
     FetchProjectGet();
@@ -37,7 +40,7 @@ export default function ProjectModal({ id, setModal }: ProjectModalProps) {
       id="default-modal"
       className="fixed top-0 right-0 left-0 z-50 flex justify-center items-center w-full h-full bg-black bg-opacity-50"
     >
-      <div className="relative p-4 w-full max-w-2xl max-h-full">
+      <div className="relative p-4 w-full max-w-3xl max-h-full">
         <div className="relative bg-white rounded-lg shadow dark:bg-gray-400">
           <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-700">
             <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
@@ -70,21 +73,21 @@ export default function ProjectModal({ id, setModal }: ProjectModalProps) {
             <Image
               src={project?.img || "/camera.png"}
               alt="프로젝트 사진"
-              width={111}
-              height={111}
+              width={500}
+              height={250}
             />
-            <p className="text-base w-11/12 text-start leading-relaxed text-gray-500 dark:text-white">
+            <p className="text-base w-11/12 text-left leading-relaxed text-gray-500 dark:text-white">
               {project?.introduce}
             </p>
           </div>
 
-          <div className="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600 gap-2">
+          <div className="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600 gap-2 flex-wrap">
             {project?.function.map((category, index) => {
               return (
                 <div
                   key={index}
                   className="box-border flex items-center justify-center 
-                     dark:∂bg-slate-50 dark:text-black bg-zinc-400 dark:bg-white text-gray-700 
+                     dark:bg-slate-50 dark:text-black bg-zinc-400 dark:bg-white text-gray-700 
                      rounded-3xl font-bold text-xs p-1"
                 >
                   {category}
@@ -94,14 +97,14 @@ export default function ProjectModal({ id, setModal }: ProjectModalProps) {
           </div>
           <div className="flex flex-col pl-5 pb-4 gap-2 font-bold">
             <Link
-              href={project?.github || ""}
-              className="hover:text-customBlue w-96"
+              href={project?.deploy || ""}
+              className="hover:text-customBlue w-112 flex-wrap"
             >
-              깃허브 주소 : {project?.github}
+              배포 주소 : {project?.deploy}
             </Link>
             <Link
               href={project?.velog || ""}
-              className="hover:text-customBlue w-96"
+              className="hover:text-customBlue w-112 flex-wrap"
             >
               velog 주소 : {project?.velog}
             </Link>

@@ -29,7 +29,10 @@ export default function Project() {
         setProjects(response.data);
         setFilteredProjects(response.data);
       } catch (error) {
-        console.log(error);
+        console.error("An unexpected error occurred", error);
+        throw new Error(
+          "서비스에 문제가 발생했습니다. 잠시 후 다시 시도해주세요."
+        );
       }
     };
     FetchProjectGet();
@@ -61,19 +64,22 @@ export default function Project() {
               onClick={() => handleSetProject(project.id)}
               className="box-border border-2 w-72 h-64 pb-2 rounded-lg flex flex-col items-center bg-zinc-100 dark:bg-gray-400 cursor-pointer"
             >
-              <div className="box-border border-2 border-black dark:border-white w-64 h-32 rounded-lg flex items-center justify-center mt-4">
+              <div className="box-border border-2 border-white dark:border-white w-64 h-32 rounded-lg flex items-center justify-center mt-4">
                 <Image
                   src={project.img}
                   alt="프로젝트 사진"
-                  width={110}
-                  height={110}
+                  width={256}
+                  height={128}
                   priority // 이 속성을 추가하면 이미지 로딩 우선순위가 높아짐
+                  className="rounded-lg"
                 />
               </div>
               <p className="text-lg font-bold text-left w-64 mt-1">
                 {project.name}
               </p>
-              <p className="text-sm text-left w-64">{project.introduce}</p>
+              <p className="text-sm text-left w-64 line-clamp-2">
+                {project.introduce}
+              </p>
               <div className="flex w-64 gap-2 mt-2">
                 {project.function.map((category, index) => {
                   return (

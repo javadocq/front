@@ -47,7 +47,10 @@ export default function Comment({
         setName("");
         setComment("");
       } catch (error) {
-        console.error(error);
+        console.error("An unexpected error occurred", error);
+        throw new Error(
+          "서비스에 문제가 발생했습니다. 잠시 후 다시 시도해주세요."
+        );
       }
     };
     fetchPostComment();
