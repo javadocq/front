@@ -11,7 +11,7 @@ interface Post {
 }
 
 async function fetchVelogPosts(): Promise<Post[]> {
-  const response = await fetch("http://localhost:3000/api/velog");
+  const response = await fetch("/api/velog");
   try {
     const posts = await response.json();
     return posts;
