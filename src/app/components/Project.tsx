@@ -98,6 +98,7 @@ export default function Project() {
           );
         })}
       </div>
+
       {modal && <ProjectModal id={projectId} setModal={setModal} />}
     </div>
   );
