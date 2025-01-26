@@ -12,6 +12,8 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        darkBg: "#515151",
+        dateBg: "#726B6B",
         customBlue: "#00D9FF",
         MainBlue: "#314453",
       },

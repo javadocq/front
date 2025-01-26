@@ -8,7 +8,7 @@ interface ThemeProp {
 export default function AboutMe({ theme }: ThemeProp) {
   return (
     <div className="mt-24 w-10/12 flex grid grid-cols-4 gap-20 max-[1300px]:grid-cols-3 max-[900px]:grid-cols-2 max-[600px]:grid-cols-1 max-[600px]:w-full max-[600px]: justify-items-center">
-      <div className="box-border border-2 w-64 h-56 rounded-lg flex flex-col items-center bg-zinc-100 dark:bg-gray-400">
+      <div className="box-border border-1 w-64 h-56 rounded-lg flex flex-col items-center bg-zinc-100 dark:bg-darkBg">
         {theme === "light" ? (
           <Image
             src="/about/icon_name.svg"
@@ -28,7 +28,7 @@ export default function AboutMe({ theme }: ThemeProp) {
         )}
         <p className="mt-6 text-2xl font-bold">이종원</p>
       </div>
-      <div className="box-border border-2 w-64 h-56 rounded-lg flex flex-col items-center bg-zinc-100 dark:bg-gray-400">
+      <div className="box-border border-1 w-64 h-56 rounded-lg flex flex-col items-center bg-zinc-100 dark:bg-darkBg">
         {theme === "light" ? (
           <Image
             src="/about/icon_calender.svg"
@@ -48,7 +48,7 @@ export default function AboutMe({ theme }: ThemeProp) {
         )}
         <p className="mt-6 text-2xl font-bold">2000년 6월 5일</p>
       </div>
-      <div className="box-border border-2 w-64 h-56 rounded-lg flex flex-col items-center bg-zinc-100 dark:bg-gray-400">
+      <div className="box-border border-1 w-64 h-56 rounded-lg flex flex-col items-center bg-zinc-100 dark:bg-darkBg">
         {theme === "light" ? (
           <Image
             src="/about/icon_mail.svg"
@@ -75,7 +75,7 @@ export default function AboutMe({ theme }: ThemeProp) {
           </Link>
         </div>
       </div>
-      <div className="box-border border-2 w-64 h-56 rounded-lg flex flex-col items-center bg-zinc-100 dark:bg-gray-400">
+      <div className="box-border border-1 w-64 h-56 rounded-lg flex flex-col items-center bg-zinc-100 dark:bg-darkBg">
         {theme === "light" ? (
           <Image
             src="/about/icon_school.svg"

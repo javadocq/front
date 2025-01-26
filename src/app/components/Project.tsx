@@ -62,31 +62,31 @@ export default function Project() {
             <div
               key={project.id}
               onClick={() => handleSetProject(project.id)}
-              className="box-border border-2 w-72 h-64 pb-2 rounded-lg flex flex-col items-center bg-zinc-100 dark:bg-gray-400 cursor-pointer"
+              className="box-border border-1 w-72 h-[270px] pb-2 rounded-lg flex flex-col items-center bg-zinc-100 dark:bg-darkBg cursor-pointer"
             >
-              <div className="box-border border-2 border-white dark:border-white w-64 h-32 rounded-lg flex items-center justify-center mt-4">
+              <div className="box-border border-2 border-zinc-100 dark:border-darkBg w-64 h-32 rounded-lg flex items-center justify-center mt-4">
                 <Image
                   src={project.img}
                   alt="프로젝트 사진"
                   width={256}
                   height={128}
-                  priority // 이 속성을 추가하면 이미지 로딩 우선순위가 높아짐
+                  priority
                   className="rounded-lg"
                 />
               </div>
               <p className="text-lg font-bold text-left w-64 mt-1">
                 {project.name}
               </p>
-              <p className="text-sm text-left w-64 line-clamp-2">
+              <p className="text-sm text-left w-64 line-clamp-2 mt-1">
                 {project.introduce}
               </p>
-              <div className="flex w-64 gap-2 mt-2">
+              <div className="flex w-64 gap-2 mt-3">
                 {project.function.map((category, index) => {
                   return (
                     <div
                       key={index}
                       className="box-border flex items-center justify-center 
-                     dark:bg-slate-50 dark:text-black bg-zinc-400 text-gray-700 
+                     dark:bg-white dark:text-black bg-zinc-400 text-gray-700 
                      rounded-3xl font-bold text-xs p-1"
                     >
                       {category}

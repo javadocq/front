@@ -15,7 +15,7 @@ export default function Filter({ filter, setFilter }: FilterProps) {
             onClick={() => setFilter(name)}
             className={`box-border flex items-center justify-center ${
               filter === name
-                ? "bg-black text-white dark:bg-slate-50 dark:text-black"
+                ? "bg-black text-white dark:bg-darkBg dark:white"
                 : "bg-gray-300 text-stone-400"
             } w-24 h-10 rounded-3xl text-base font-bold transition`}
           >

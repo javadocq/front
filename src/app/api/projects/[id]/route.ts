@@ -25,7 +25,7 @@ const dummyData = [
       "Three.js",
       "API-Route",
     ],
-    deploy: "https://github.com/javadocq",
+    deploy: "https://front-ashen-eight.vercel.app/",
     velog: "https://velog.io/@javadocq/Next.js-시작하기",
   },
 ];

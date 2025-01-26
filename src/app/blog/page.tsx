@@ -27,8 +27,8 @@ export default function Home() {
 
   return (
     <div className="w-screen flex flex-col items-center pb-[20px]">
-      <div className="box-border flex items-center justify-center bg-black dark:bg-slate-50 w-56 h-16 rounded-lg mt-10">
-        <p className="text-white dark:text-black text-3xl">BLOG</p>
+      <div className="box-border flex items-center justify-center bg-black dark:bg-darkBg w-56 h-16 rounded-lg mt-10">
+        <p className="text-white dark:text-white text-3xl font-bold">BLOG</p>
       </div>
       <div className="grid grid-cols-4 gap-16 mt-16 max-[1380px]:grid-cols-3 max-[1080px]:grid-cols-2 max-[765px]:grid-cols-1">
         {posts.map((post, index) => {
@@ -36,7 +36,7 @@ export default function Home() {
             <Link
               href={post.link}
               key={index}
-              className="box-border border-2 w-72 h-60 pb-2 rounded-lg flex flex-col items-center bg-zinc-100 dark:bg-gray-400 cursor-pointer"
+              className="box-border border-1 w-72 h-60 pb-2 rounded-lg flex flex-col items-center bg-zinc-100 dark:bg-darkBg cursor-pointer"
             >
               <div className="box-border border-2 border-black dark:border-white w-64 h-16 rounded-lg flex items-center justify-center mt-4 px-3">
                 <p className="text-base font-bold text-left w-64 mt-1 text-center line-clamp-2">
@@ -49,7 +49,7 @@ export default function Home() {
               </p>
               <div className="box-border border-2 w-full mt-4"></div>
               <div className="flex items-center justify-between w-full px-2 h-8">
-                <div className="flex items-center gap-2 mt-2">
+                <div className="flex items-center gap-2 mt-3">
                   <Image
                     src={post.profile}
                     alt="프로필 사진"
@@ -59,7 +59,7 @@ export default function Home() {
                   />
                   <p className="text-sm font-bold">JAVADOCQ</p>
                 </div>
-                <p className="text-slate-400 dark:text-black mt-2">
+                <p className="text-slate-400 dark:text-dateBg mt-3">
                   {post.pubDate.slice(5, 16)}
                 </p>
               </div>
