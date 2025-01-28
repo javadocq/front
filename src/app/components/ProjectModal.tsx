@@ -41,8 +41,8 @@ export default function ProjectModal({ id, setModal }: ProjectModalProps) {
       className="fixed top-0 right-0 left-0 z-50 flex justify-center items-center w-full h-full bg-black bg-opacity-50"
     >
       <div className="relative p-4 w-full max-w-3xl max-h-full">
-        <div className="relative bg-white rounded-lg shadow dark:bg-darkBg">
-          <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-white">
+        <div className="relative bg-lightBg rounded-lg shadow dark:bg-darkBg">
+          <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-black dark:border-white">
             <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
               {project?.name}
             </h3>
@@ -81,13 +81,13 @@ export default function ProjectModal({ id, setModal }: ProjectModalProps) {
             </p>
           </div>
 
-          <div className="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-white gap-2 flex-wrap">
+          <div className="flex items-center p-4 md:p-5 border-t border-black rounded-b dark:border-white gap-2 flex-wrap">
             {project?.function.map((category, index) => {
               return (
                 <div
                   key={index}
                   className="box-border flex items-center justify-center 
-                     dark:bg-slate-50 dark:text-black bg-zinc-400 dark:bg-white text-gray-700 
+                     dark:bg-slate-50 dark:text-black bg-filterBg dark:bg-white text-white
                      rounded-3xl font-bold text-xs p-1"
                 >
                   {category}

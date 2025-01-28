@@ -76,9 +76,8 @@ export default function ThreeScene() {
       requestAnimationFrame(animate);
 
       // 씬을 회전시켜서 큐브가 돌아가게 하기
-      scene.rotation.x += 0.005;
-      scene.rotation.y += 0.005;
-      scene.rotation.z += 0.005;
+      scene.rotation.x += 0.001;
+      scene.rotation.z += 0.0009;
 
       // 렌더링
       renderer.render(scene, camera);

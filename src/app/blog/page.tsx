@@ -36,7 +36,7 @@ export default function Home() {
             <Link
               href={post.link}
               key={index}
-              className="box-border border-1 w-72 h-60 pb-2 rounded-lg flex flex-col items-center bg-zinc-100 dark:bg-darkBg cursor-pointer"
+              className="box-border border-1 w-72 h-60 pb-2 rounded-lg flex flex-col items-center bg-lightBg dark:bg-darkBg cursor-pointer"
             >
               <div className="box-border border-2 border-black dark:border-white w-64 h-16 rounded-lg flex items-center justify-center mt-4 px-3">
                 <p className="text-base font-bold text-left w-64 mt-1 text-center line-clamp-2">
@@ -47,7 +47,7 @@ export default function Home() {
               <p className="text-base text-left w-64 mt-4 line-clamp-3">
                 {post.summary}
               </p>
-              <div className="box-border border-2 w-full mt-4"></div>
+              <div className="box-border border-[1px] border-black dark:border-white w-full mt-4"></div>
               <div className="flex items-center justify-between w-full px-2 h-8">
                 <div className="flex items-center gap-2 mt-3">
                   <Image
@@ -59,7 +59,7 @@ export default function Home() {
                   />
                   <p className="text-sm font-bold">JAVADOCQ</p>
                 </div>
-                <p className="text-slate-400 dark:text-dateBg mt-3">
+                <p className="text-filterBg dark:text-dateBg mt-3">
                   {post.pubDate.slice(5, 16)}
                 </p>
               </div>

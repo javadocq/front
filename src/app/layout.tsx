@@ -6,8 +6,8 @@ import "./globals.css";
 import Header from "./components/Header";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-import ThreeScene from "./components/ThreeScene";
+import { useEffect } from "react";
+import localFont from "next/font/local";
 
 const variants = {
   hidden: { opacity: 0, x: 0, y: 200 },
@@ -23,13 +23,19 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const pretendard = localFont({
+  src: "../../public/font/PretendardVariable.woff2",
+  display: "swap",
+  weight: "45 920",
+  variable: "--font-pretendard",
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   const pathname = usePathname();
-  const [inState, setInState] = useState<boolean>(false);
 
   useEffect(() => {
     const theme = window.localStorage.getItem("theme");
@@ -44,37 +50,23 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${pretendard.className} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {inState ? (
-          <ThemeProvider attribute="class">
-            <Header />
-            {/* 자식 컴포넌트가 마운트 되거나 언마운트될 때 애니메이션 처리 */}
-            <AnimatePresence>
-              <motion.div
-                key={pathname} // 현재 경로가 변경되면 새로운 key가 적용
-                variants={variants}
-                initial="hidden"
-                animate="enter"
-                transition={{ type: "tween", duration: 1 }}
-              >
-                {children}
-              </motion.div>
-            </AnimatePresence>
-          </ThemeProvider>
-        ) : (
-          <div className="relative">
-            <ThreeScene />
-            <div className="absolute bottom-56 left-0 right-0 flex justify-center">
-              <button
-                className="bg-zinc-800 box-border transition-transform duration-300 flex items-center justify-center w-56 h-16 rounded-lg mt-10 text-white text-2xl hover:scale-110"
-                onClick={() => setInState(true)}
-              >
-                들어가기
-              </button>
-            </div>
-          </div>
-        )}
+        <ThemeProvider attribute="class">
+          {pathname === "/" ? <></> : <Header />}
+          {/* 자식 컴포넌트가 마운트 되거나 언마운트될 때 애니메이션 처리 */}
+          <AnimatePresence>
+            <motion.div
+              key={pathname} // 현재 경로가 변경되면 새로운 key가 적용
+              variants={variants}
+              initial="hidden"
+              animate="enter"
+              transition={{ type: "tween", duration: 1 }}
+            >
+              {children}
+            </motion.div>
+          </AnimatePresence>
+        </ThemeProvider>
       </body>
     </html>
   );

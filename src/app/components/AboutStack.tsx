@@ -6,7 +6,7 @@ interface ThemeProp {
 
 export default function AboutStack({ theme }: ThemeProp) {
   return (
-    <div className="mt-16 box-border border-1 w-10/12 h-56 rounded-lg flex max-[565px]:flex-col max-[565px]:h-auto max-[565px]:py-2 max-[565px]:gap-2 items-center min-[565px]:pl-12 bg-zinc-100 dark:bg-darkBg overflow-hidden">
+    <div className="mt-16 box-border border-[2px] border-black dark:border-white w-10/12 h-56 rounded-lg flex max-[565px]:flex-col max-[565px]:h-auto max-[565px]:py-2 max-[565px]:gap-2 items-center min-[565px]:pl-12 bg-zinc-100 dark:bg-darkBg overflow-hidden">
       {theme === "light" ? (
         <Image src="/about/icon_stack.svg" alt="스택" width={50} height={50} />
       ) : (
