@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
+import Arrow_Black from "@/../../public/project/arrow_right.svg";
+import Arrow_White from "@/../../public/project/arrow_right_white.svg";
+import useTheme from "next-theme";
 
 interface ProjectModalProps {
   id: number;
@@ -16,9 +19,11 @@ interface ProjectProp {
   function: string[];
   deploy: string;
   velog: string;
+  h;
 }
 
 export default function ProjectModal({ id, setModal }: ProjectModalProps) {
+  const { theme } = useTheme();
   const [project, setProject] = useState<ProjectProp | null>(null);
 
   useEffect(() => {
@@ -73,10 +78,10 @@ export default function ProjectModal({ id, setModal }: ProjectModalProps) {
             <Image
               src={project?.img || "/camera.png"}
               alt="프로젝트 사진"
-              width={500}
+              width={640}
               height={250}
             />
-            <p className="text-base w-11/12 text-left leading-relaxed text-gray-500 dark:text-white">
+            <p className="text-[12px]] w-11/12 text-left leading-relaxed text-black dark:text-white">
               {project?.introduce}
             </p>
           </div>
@@ -88,24 +93,34 @@ export default function ProjectModal({ id, setModal }: ProjectModalProps) {
                   key={index}
                   className="box-border flex items-center justify-center 
                      dark:bg-slate-50 dark:text-black bg-filterBg dark:bg-white text-white
-                     rounded-3xl font-bold text-xs p-1"
+                     rounded-3xl font-bold text-[12px] p-1 px-[8px]"
                 >
                   {category}
                 </div>
               );
             })}
           </div>
-          <div className="flex flex-col pl-5 pb-4 gap-2 font-bold">
+          <div className="flex flex-col pl-5 pb-4 gap-1 font-[400]">
             <Link
               href={project?.deploy || ""}
-              className="hover:text-customBlue w-112 flex-wrap"
+              className="hover:text-customBlue w-112 flex-wrap flex gap-[2px]"
             >
+              {theme === "light" ? (
+                <Image src={Arrow_Black} alt="화살표" width={10} height={10} />
+              ) : (
+                <Image src={Arrow_White} alt="화살표" width={10} height={10} />
+              )}
               배포 주소 : {project?.deploy}
             </Link>
             <Link
               href={project?.velog || ""}
-              className="hover:text-customBlue w-112 flex-wrap"
+              className="hover:text-customBlue w-112 flex-wrap flex gap-[2px]"
             >
+              {theme === "light" ? (
+                <Image src={Arrow_Black} alt="화살표" width={10} height={10} />
+              ) : (
+                <Image src={Arrow_White} alt="화살표" width={10} height={10} />
+              )}
               velog 주소 : {project?.velog}
             </Link>
           </div>

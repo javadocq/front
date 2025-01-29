@@ -53,7 +53,7 @@ export default function RootLayout({
         className={`${pretendard.className} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider attribute="class">
-          {pathname === "/" ? <></> : <Header />}
+          <Header />
           {/* 자식 컴포넌트가 마운트 되거나 언마운트될 때 애니메이션 처리 */}
           <AnimatePresence>
             <motion.div

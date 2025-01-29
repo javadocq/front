@@ -62,9 +62,9 @@ export default function Project() {
             <div
               key={project.id}
               onClick={() => handleSetProject(project.id)}
-              className="box-border border-1 w-72 h-[270px] pb-2 rounded-lg flex flex-col items-center bg-lightBg dark:bg-darkBg cursor-pointer"
+              className="box-border border-1 w-72 h-[270px] pb-2 rounded-lg flex flex-col items-center shadow-[4px_4px_4px_rgba(0,0,0,0.7)] bg-lightBg dark:bg-darkBg cursor-pointer"
             >
-              <div className="box-border border-2 border-zinc-100 dark:border-darkBg w-64 h-32 rounded-lg flex items-center justify-center mt-4">
+              <div className="w-[256px] h-[128px] rounded-lg flex items-center justify-center mt-4">
                 <Image
                   src={project.img}
                   alt="프로젝트 사진"
@@ -74,20 +74,20 @@ export default function Project() {
                   className="rounded-lg"
                 />
               </div>
-              <p className="text-lg font-bold text-left w-64 mt-1">
+              <p className="text-[18px] font-bold text-left w-64 mt-1 ml-[5px]">
                 {project.name}
               </p>
-              <p className="text-sm text-left w-64 line-clamp-2 mt-1">
+              <p className="text-[12px] text-left w-64 line-clamp-2 mt-1 ml-[5px]">
                 {project.introduce}
               </p>
-              <div className="flex w-64 gap-2 mt-3">
+              <div className="flex w-64 gap-1 mt-3 ml-[5px]">
                 {project.function.map((category, index) => {
                   return (
                     <div
                       key={index}
                       className="box-border flex items-center justify-center 
                      dark:bg-white dark:text-black bg-filterBg text-white
-                     rounded-3xl font-bold text-xs p-1"
+                     rounded-3xl font-bold text-[12px] p-1 px-[8px]"
                     >
                       {category}
                     </div>
