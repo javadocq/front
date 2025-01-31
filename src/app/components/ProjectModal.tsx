@@ -16,10 +16,12 @@ interface ProjectProp {
   img: string;
   name: string;
   introduce: string;
-  function: string[];
+  functions: string[];
+  solutions: string[];
+  takeaways: string[];
+  category: string[];
   deploy: string;
   velog: string;
-  h;
 }
 
 export default function ProjectModal({ id, setModal }: ProjectModalProps) {
@@ -44,8 +46,12 @@ export default function ProjectModal({ id, setModal }: ProjectModalProps) {
     <div
       id="default-modal"
       className="fixed top-0 right-0 left-0 z-50 flex justify-center items-center w-full h-full bg-black bg-opacity-50"
+      onClick={() => setModal(false)}
     >
-      <div className="relative p-4 w-full max-w-3xl max-h-full">
+      <div
+        className="relative p-4 w-full max-w-3xl max-h-[85vh] overflow-auto scrollbar-hidden"
+        onClick={(e) => e.stopPropagation()} // 내부 클릭 시 이벤트 전파 방지
+      >
         <div className="relative bg-lightBg rounded-lg shadow dark:bg-darkBg">
           <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-black dark:border-white">
             <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
@@ -81,13 +87,57 @@ export default function ProjectModal({ id, setModal }: ProjectModalProps) {
               width={640}
               height={250}
             />
-            <p className="text-[12px]] w-11/12 text-left leading-relaxed text-black dark:text-white">
+            <strong className="text-[30px] w-11/12 text-left font-bold leading-relaxed text-black dark:text-white">
+              💡{project?.name}💡​
+            </strong>
+            <p className="text-[16px] w-11/12 text-left leading-relaxed text-black dark:text-white">
               {project?.introduce}
             </p>
+            <strong className="text-[20px] w-11/12 text-left font-bold leading-relaxed text-black dark:text-white">
+              🚀​ 기능
+            </strong>
+            {project?.functions?.map((func, index) => {
+              return (
+                <p
+                  key={index}
+                  className="text-[16px] w-11/12 text-left text-black dark:text-white"
+                >
+                  - {func}
+                </p>
+              );
+            })}
+
+            <strong className="text-[20px] w-11/12 text-left font-bold leading-relaxed text-black dark:text-white">
+              ⌛​ 문제 및 해결
+            </strong>
+            {project?.solutions?.map((solution, index) => {
+              return (
+                <p
+                  key={index}
+                  className="text-[16px] w-11/12 text-left text-black dark:text-white"
+                >
+                  - {solution}
+                </p>
+              );
+            })}
+
+            <strong className="text-[20px] w-11/12 font-bold text-left leading-relaxed text-black dark:text-white">
+              🏆 느낀점
+            </strong>
+            {project?.takeaways?.map((takeaway, index) => {
+              return (
+                <p
+                  key={index}
+                  className="text-[16px] w-11/12 text-left text-black dark:text-white"
+                >
+                  - {takeaway}
+                </p>
+              );
+            })}
           </div>
 
           <div className="flex items-center p-4 md:p-5 border-t border-black rounded-b dark:border-white gap-2 flex-wrap">
-            {project?.function.map((category, index) => {
+            {project?.category?.map((category, index) => {
               return (
                 <div
                   key={index}
