@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import localFont from "next/font/local";
+import { Analytics } from "@vercel/analytics/next";
 
 const variants = {
   hidden: { opacity: 0, x: 0, y: 200 },
@@ -64,6 +65,7 @@ export default function RootLayout({
               transition={{ type: "tween", duration: 1 }}
             >
               {children}
+              <Analytics />
             </motion.div>
           </AnimatePresence>
         </ThemeProvider>
