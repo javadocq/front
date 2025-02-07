@@ -20,6 +20,15 @@ export async function GET() {
         "나만의 개인 블로그를 만들기 위한 프로젝트입니다. 이전에 사용해보지 않았던 기능들, 예를 들어 Dark Mode와 Three.js 등을 적극적으로 활용하여 사용자들에게 독특하고 차별화된 블로그 경험을 제공하고자 했습니다.",
       function: ["NextJS", "tailwindCSS", "Django"],
     },
+    {
+      id: 3,
+      type: "Next",
+      img: "/project/ericalion.png",
+      name: "멋쟁이사자처럼 :: 한양대 에리카 홈페이지",
+      introduce:
+        "동아리원들과 함께한 프로젝트로, 멋쟁이사자처럼 한양대학교 ERICA 캠퍼스의 홈페이지를 개설하였습니다. 주요 기능으로는 동아리 활동 안내, 프로젝트 및 동아리 운영진 소개, 지원 안내 등이 포함되어 있으며, 사용자 친화적인 UI/UX를 구현하기 위해 노력했습니다.",
+      function: ["NextJS", "tailwindCSS", "Spring", "PostgreSQL"],
+    },
   ];
 
   return NextResponse.json(dummyData);

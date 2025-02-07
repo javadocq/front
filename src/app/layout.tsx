@@ -50,6 +50,20 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        {/* Favicon 설정 */}
+        <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+
+        {/* SEO 기본 메타태그 */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="JAVADOCQ의 개인 블로그입니다." />
+        <meta property="og:title" content="JAVADOCQ_BLOG" />
+        <meta
+          property="og:description"
+          content="JAVADOCQ의 개인 블로그입니다."
+        />
+        <meta property="og:image" content="/main/MainProject.png" />
+      </head>
       <body
         className={`${pretendard.className} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >

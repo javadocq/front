@@ -24,7 +24,7 @@ const dummyData = [
     ],
     catrgory: ["TypeScript", "React", "Django", "Styled-Components", "SQLite"],
     deploy: "https://when-we-will-meet.co.kr",
-    velog: "",
+    velog: "-",
   },
   {
     id: 2,
@@ -49,6 +49,31 @@ const dummyData = [
     category: ["NextJS", "tailwindCSS", "Django", "Darkmode", "API-Route"],
     deploy: "https://front-ashen-eight.vercel.app/",
     velog: "https://velog.io/@javadocq/Next.js-시작하기",
+  },
+  {
+    id: 3,
+    type: "Next",
+    img: "/project/ericalion.png",
+    name: "멋쟁이사자처럼 :: 한양대 에리카 홈페이지",
+    introduce:
+      "동아리원들과 함께한 프로젝트로, 멋쟁이사자처럼 한양대학교 ERICA 캠퍼스의 홈페이지를 개설하였습니다. 주요 기능으로는 동아리 활동 안내, 프로젝트 및 동아리 운영진 소개, 지원 안내 등이 포함되어 있으며, 사용자 친화적인 UI/UX를 구현하기 위해 노력했습니다.",
+    functions: [
+      "3D 효과를 이용한 메인 페이지 구성",
+      "모바일, 태블릿, 데스크탑 환경에 맞춘 반응형 디자인",
+      "Cloud 배포를 통해 이미지와 데이터 관리",
+    ],
+    solutions: [
+      "동기 방식으로 데이터를 받아오다보니 페이지 로딩이 느려지는 문제 발생 ➡️ 비동기 방식의 Promise을 사용하여 데이터를 받아오는 방식으로 변경",
+      "img 태그를 사용하다보니 빌드 오류가 발생 ➡️ Next.js의 Image 컴포넌트를 사용하여 이미지를 불러오고 최적화하여 빌드 오류 해결",
+      "반응형 디자인을 적용하다보니 디자인이 깨지는 문제 발생 ➡️ tailwindCSS를 사용하여 반응형 디자인을 적용하고 디자인을 유지",
+    ],
+    takeaways: [
+      "처음으로 총괄을 맡아서 진행해보았는데, 팀원들과의 소통과 협업이 중요하다는 것을 느꼈습니다.",
+      "혼자 만드는 것이 아니라 동아리원들과 함께하는 프로젝트라서 서로의 의견을 존중하고 수용하는 것이 중요하다는 것을 배웠습니다.",
+    ],
+    category: ["NextJS", "tailwindCSS", "Django", "Darkmode", "API-Route"],
+    deploy: "https://ericalion.vercel.app/",
+    velog: "-",
   },
 ];
 
