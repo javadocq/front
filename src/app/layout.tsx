@@ -63,6 +63,8 @@ export default function RootLayout({
           content="JAVADOCQ의 개인 블로그입니다."
         />
         <meta property="og:image" content="/main/MainProject.png" />
+
+        <title>JAVADOCQ_BLOG</title>
       </head>
       <body
         className={`${pretendard.className} ${geistSans.variable} ${geistMono.variable} antialiased`}
