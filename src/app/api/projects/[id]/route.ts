@@ -71,7 +71,7 @@ const dummyData = [
       "처음으로 총괄을 맡아서 진행해보았는데, 팀원들과의 소통과 협업이 중요하다는 것을 느꼈습니다.",
       "혼자 만드는 것이 아니라 동아리원들과 함께하는 프로젝트라서 서로의 의견을 존중하고 수용하는 것이 중요하다는 것을 배웠습니다.",
     ],
-    category: ["NextJS", "tailwindCSS", "Django", "Darkmode", "API-Route"],
+    category: ["NextJS", "tailwindCSS", "Spring", "PostgreSQL"],
     deploy: "https://ericalion.vercel.app/",
     velog: "-",
   },
