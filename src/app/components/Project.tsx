@@ -74,13 +74,13 @@ export default function Project() {
                   className="rounded-lg"
                 />
               </div>
-              <p className="text-[18px] font-bold text-left w-64 mt-1 ml-[5px]">
+              <p className="text-[18px] font-bold text-left w-64 mt-1 ml-[5px] line-clamp-1">
                 {project.name}
               </p>
               <p className="text-[12px] text-left w-64 line-clamp-2 mt-1 ml-[5px]">
                 {project.introduce}
               </p>
-              <div className="flex w-64 gap-1 mt-3 ml-[5px]">
+              <div className="flex w-64 gap-1 mt-3 ml-[5px] overflow-x-hidden">
                 {project.function.map((category, index) => {
                   return (
                     <div
