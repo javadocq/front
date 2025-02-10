@@ -74,7 +74,7 @@ export default function Project() {
                   className="rounded-lg"
                 />
               </div>
-              <p className="text-[18px] font-bold text-left w-64 mt-1 ml-[5px]">
+              <p className="text-[18px] font-bold text-left w-64 mt-1 ml-[5px] line-clamp-1">
                 {project.name}
               </p>
               <p className="text-[12px] text-left w-64 line-clamp-2 mt-1 ml-[5px]">
