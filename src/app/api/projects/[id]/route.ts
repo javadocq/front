@@ -75,6 +75,32 @@ const dummyData = [
     deploy: "https://ericalion.vercel.app/",
     velog: "-",
   },
+  {
+    id: 4,
+    type: "React",
+    img: "/project/indiflow.png",
+    name: "Indiflow",
+    introduce:
+      "개인적으로 프로젝트를 진행하는 사람들을 위해 프로젝트 관리 웹 서비스를 제작해보았습니다. 주요 기능으로 Project/Task/SubTask 생성 및 완료가 있으며, 각 프로젝트마다 메모를 작성할 수 있게 추가해두었습니다. 또, 포모도로 타이머를 활용하여 사용자에게 재미성을 부여하기도 하였습니다.",
+    functions: [
+      "프로젝트, 태스크, 서브태스크 생성 및 상태 관리 (완료 버튼)",
+      "포모도로 타이머 기능을 통해 집중력 향상과 재미 요소 추가",
+      "각 프로젝트별 메모 기능으로 자유로운 아이디어 기록 가능",
+    ],
+    solutions: [
+      "포모도로 원형 그래프를 수작업으로 그리기 어려운 상태 ➡️ React Circular Progressbar 라이브러리를 사용하여 원형 그래프를 쉽게 구현",
+      "Spring에서는 env 파일을 기본적으로 지원해주지 않는 상황 발생(배포 시 문제) ➡️ Spring에서 dotenv 라이브러리를 사용하여 env 파일을 지원하도록 설정",
+      "양방향 연관관계를 그대로 JSON으로 직렬화하면서 무한 루프가 발생함 ➡️ Entity 대신 DTO를 사용해 직렬화 대상 필드를 명확히 제어함으로써 무한 루프 문제 해결",
+    ],
+    takeaways: [
+      "Spring을 배우고 나서 처음으로 풀스택으로 웹 페이지를 구현해보았던 프로젝트인데 좋은 경험이었습니다.",
+      "deploy를 처음으로 해보았는데, 배포 과정에서 많은 시행착오가 있었지만 좋은 경험이었습니다.",
+      "프론트 측에서는 전역 라이브러리를 사용 못한 점이 아쉬웠습니다.",
+    ],
+    category: ["React", "Styled-coponents", "Spring", "MySQL"],
+    deploy: "https://indiflow-front-p8eaopqg3-javadocqs-projects.vercel.app/",
+    velog: "-",
+  },
 ];
 
 export async function GET(req: NextRequest) {

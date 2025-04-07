@@ -29,6 +29,16 @@ export async function GET() {
         "동아리원들과 함께한 프로젝트로, 멋쟁이사자처럼 한양대학교 ERICA 캠퍼스의 홈페이지를 개설하였습니다. 주요 기능으로는 동아리 활동 안내, 프로젝트 및 동아리 운영진 소개, 지원 안내 등이 포함되어 있으며, 사용자 친화적인 UI/UX를 구현하기 위해 노력했습니다.",
       function: ["NextJS", "tailwindCSS", "Spring", "PostgreSQL"],
     },
+    {
+      id: 4,
+      type: "React",
+      img: "/project/indiflow.png",
+      name: "Indiflow",
+      introduce:
+        "개인적으로 프로젝트를 진행하는 사람들을 위해 프로젝트 관리 웹 서비스를 제작해보았습니다. 주요 기능으로 Project/Task/SubTask 생성 및 완료가 있으며, 각 프로젝트마다 메모를 작성할 수 있게 추가해두었습니다. 또, 포모도로 타이머를 활용하여 사용자에게 재미성을 부여하기도 하였습니다.",
+
+      function: ["React", "tailwindCSS", "Spring", "MySQL"],
+    },
   ];
 
   return NextResponse.json(dummyData);
