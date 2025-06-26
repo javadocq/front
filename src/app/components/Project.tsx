@@ -87,7 +87,8 @@ export default function Project() {
                       key={index}
                       className="box-border flex items-center justify-center 
                      dark:bg-white dark:text-black bg-filterBg text-white
-                     rounded-3xl font-bold text-[12px] p-1 px-[8px]"
+                     rounded-3xl font-bold text-[12px] p-1 px-[8px] min-w-[40px] whitespace-nowrap 
+                     overflow-hidden text-ellipsis"
                     >
                       {category}
                     </div>

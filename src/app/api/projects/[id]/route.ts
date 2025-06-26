@@ -101,6 +101,32 @@ const dummyData = [
     deploy: "https://indiflow-front-p8eaopqg3-javadocqs-projects.vercel.app/",
     velog: "-",
   },
+  {
+    id: 5,
+    type: "React",
+    img: "/project/hylight.png",
+    name: "HYLIGHT-ESPERO",
+    introduce:
+      "한양대학교 ERICA의 축제기획단과 협업하여 만든 학교 봄 축제 웹 어플리케이션입니다. 축제 기간 동안 학생들이 참여할 수 있는 다양한 이벤트와 프로그램을 소개합니다. 또한, 축제 관련 공지사항과 공연 일정 등을 확인하고 분실물 등록, 주점 위치 확인 기능도 포함되어 있습니다.",
+    functions: [
+      "KAKAO 지도 API를 활용한 주점 및 다양한 이벤트 위치 확인 기능",
+      "타임 테이블을 통한 공연 일정 확인 기능",
+      "분실물 등록 및 확인 기능",
+    ],
+    solutions: [
+      "분실물 등록 시 사용자를 식별할 수 없는 문제가 발생 ➡️ Kakao 로그인 API를 도입하여 간편한 사용자 인증 기능을 구현",
+      "웨이팅 기능 불편함으로 축제기획단 하고 갈등 발생 ➡️ 웨이팅 기능을 제외하고, 사용자들이 쉽게 사용할 수 있는 기능들로 대체",
+      "초기 타임테이블은 30분 단위로 고정되어 있어 세부 일정 반영 어려움 ➡️ 5분 단위로 조정 가능하도록 개선하여 다양한 프로그램 일정을 유동적으로 관리",
+    ],
+    takeaways: [
+      "학교에서 진행하는 큰 행사에 참여하면서 많은 사람들과 협업하는 경험을 쌓았습니다.",
+      "실제 사용자들이 사용하는 웹 어플리케이션을 개발하면서 사용자 경험(UX)의 중요성을 깨달았습니다.",
+      "잘하시는 프론트엔드분들과 함께하니 저 또한 성장하는 계기가 되었습니다.",
+    ],
+    category: ["React", "Styled-coponents", "Spring", "MySQL"],
+    deploy: "https://likelion-espero.vercel.app/",
+    velog: "-",
+  },
 ];
 
 export async function GET(req: NextRequest) {
