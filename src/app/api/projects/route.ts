@@ -39,6 +39,16 @@ export async function GET() {
 
       function: ["React", "tailwindCSS", "Spring", "MySQL"],
     },
+    {
+      id: 5,
+      type: "React",
+      img: "/project/hylight.png",
+      name: "HYLIGHT-ESPERO",
+      introduce:
+        "한양대학교 ERICA의 축제기획단과 협업하여 만든 학교 봄 축제 웹 어플리케이션입니다. 축제 기간 동안 학생들이 참여할 수 있는 다양한 이벤트와 프로그램을 소개합니다. 또한, 축제 관련 공지사항과 공연 일정 등을 확인하고 분실물 등록, 주점 위치 확인 기능도 포함되어 있습니다.",
+
+      function: ["React", "styled-components", "Spring", "MySQL"],
+    },
   ];
 
   return NextResponse.json(dummyData);
