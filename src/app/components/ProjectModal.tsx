@@ -16,6 +16,7 @@ interface ProjectProp {
   img: string;
   name: string;
   introduce: string;
+  role: string;
   functions: string[];
   solutions: string[];
   takeaways: string[];
@@ -50,7 +51,7 @@ export default function ProjectModal({ id, setModal }: ProjectModalProps) {
     >
       <div
         className="relative p-4 w-full max-w-3xl max-h-[85vh] overflow-auto scrollbar-hidden"
-        onClick={(e) => e.stopPropagation()} // 내부 클릭 시 이벤트 전파 방지
+        onClick={(e) => e.stopPropagation()}
       >
         <div className="relative bg-lightBg rounded-lg shadow dark:bg-darkBg">
           <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-black dark:border-white">
@@ -92,6 +93,12 @@ export default function ProjectModal({ id, setModal }: ProjectModalProps) {
             </strong>
             <p className="text-[16px] w-11/12 text-left leading-relaxed text-black dark:text-white">
               {project?.introduce}
+            </p>
+            <strong className="text-[20px] w-11/12 text-left font-bold leading-relaxed text-black dark:text-white">
+              ❗​ 내가 맡은 역할
+            </strong>
+            <p className="text-[16px] w-11/12 text-left leading-relaxed text-black dark:text-white">
+              {project?.role || "해당 사항 없음"}
             </p>
             <strong className="text-[20px] w-11/12 text-left font-bold leading-relaxed text-black dark:text-white">
               🚀​ 기능

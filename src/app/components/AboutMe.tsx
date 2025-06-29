@@ -71,7 +71,7 @@ export default function AboutMe() {
             </div>
             <div className="flex flex-col gap-[16px] ml-[31px] max-[450px]:ml-[-15px]">
               <p>React, TypeScript, Next.js</p>
-              <p>Django, Spring Boot</p>
+              <p>Spring Boot, MySQL</p>
               <p>AWS(S3, EC2), Vercel, Netlify, Cloudtype</p>
             </div>
           </div>
