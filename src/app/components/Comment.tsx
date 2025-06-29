@@ -25,9 +25,10 @@ export default function Comment({
   const [comment, setComment] = useState<string>("");
 
   function formatDate(date: string) {
-    const year = date.slice(0, 4);
-    const month = date.slice(5, 7);
-    const day = date.slice(8, 10);
+    const [year, month, day] = date
+      .replace(/\s/g, "")
+      .replace(/\.$/, "")
+      .split("-");
     return `${year}년 ${month}월 ${day}일`;
   }
 
@@ -35,13 +36,10 @@ export default function Comment({
     const fetchPostComment = async () => {
       try {
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        const response = await axios.post(
-          "https://port-0-back-m5f0l3cp0d025088.sel4.cloudtype.app/community/",
-          {
-            name: name,
-            content: comment,
-          }
-        );
+        const response = await axios.post("/api/community", {
+          name: name,
+          content: comment,
+        });
 
         setChangeVar(!changeVar);
         setName("");

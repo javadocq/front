@@ -137,10 +137,10 @@ const dummyData = [
 export async function GET(req: NextRequest) {
   // URL에서 파라미터 추출 (예: /api/projects/[id] 형식)
   const url = new URL(req.url);
-  const id = url.pathname.split("/").pop(); // URL 경로에서 마지막 부분인 id를 추출
+  const id = url.pathname.split("/").pop();
 
   if (id) {
-    const projectId = parseInt(id, 10); // id를 정수로 변환
+    const projectId = parseInt(id, 10);
     const project = dummyData.find((item) => item.id === projectId);
 
     if (project) {
