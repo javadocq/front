@@ -4,7 +4,7 @@ import cache from "memory-cache";
 
 const parser = new Parser();
 const CACHE_KEY = process.env.CACHE_KEY || "default_cache_key";
-const CACHE_DURATION = 1000 * 60 * 60; // 1시간 동안 캐싱
+const CACHE_DURATION = 1000 * 60 * 60;
 
 export async function GET() {
   try {
