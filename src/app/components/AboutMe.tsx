@@ -36,9 +36,11 @@ export default function AboutMe() {
           <div className="flex mt-[20px]">
             <div className="flex flex-col gap-[16px] w-[208px] max-[450px]:w-[148px]">
               <p>2024. 12</p>
+              <p>2025. 02</p>
             </div>
             <div className="flex flex-col gap-[16px] ml-[31px] max-[450px]:ml-[-15px]">
-              <p>HY-THONE 대상</p>
+              <p>(교내) HY-THONE 대상</p>
+              <p>(교외) 블레이버스 해커톤 대상</p>
             </div>
           </div>
         </div>

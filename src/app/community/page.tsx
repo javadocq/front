@@ -19,9 +19,7 @@ export default function Home() {
   useEffect(() => {
     const fetchGetComments = async () => {
       try {
-        const response = await axios.get(
-          "https://port-0-back-m5f0l3cp0d025088.sel4.cloudtype.app/community/"
-        );
+        const response = await axios.get("/api/community");
         setComments(response.data);
       } catch (error) {
         console.error(error);
