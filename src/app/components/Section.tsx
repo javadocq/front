@@ -6,7 +6,7 @@ import {
   useTransform,
   useMotionTemplate,
 } from "framer-motion";
-import { useRef, PropsWithChildren } from "react";
+import { useRef, type PropsWithChildren } from "react";
 
 export default function Section({
   children,
@@ -16,7 +16,6 @@ export default function Section({
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    // top이 뷰포트 중앙에 닿을 때 0, bottom이 중앙에 닿을 때 1
     offset: ["start center", "end center"],
   });
 
