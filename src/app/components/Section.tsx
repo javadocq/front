@@ -16,7 +16,8 @@ export default function Section({
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "end start"],
+    // top이 뷰포트 중앙에 닿을 때 0, bottom이 중앙에 닿을 때 1
+    offset: ["start center", "end center"],
   });
 
   const opacity = useTransform(
@@ -29,8 +30,8 @@ export default function Section({
 
   const blurPx = useTransform(
     scrollYProgress,
-    [0, 0.25, 0.75, 1],
-    [8, 0, 1, 2]
+    [0, 0.35, 0.65, 1],
+    [8, 0, 0, 8]
   );
   const filter = useMotionTemplate`blur(${blurPx}px)`;
 

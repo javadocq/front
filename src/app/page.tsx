@@ -1,5 +1,3 @@
-"use client";
-
 import AboutMe from "./components/AboutMe";
 import Archiving from "./components/Archiving";
 import Hook from "./components/Hook";
