@@ -7,22 +7,30 @@ assignees: javadocq
 
 ---
 
-feat: 새로운 기능 추가
+---
+name: Feature
+about: Suggest an idea for this project
+title: ''
+labels: Feat
+assignees: ''
 
-fix: 버그 수정
+---
 
-docs: 문서 수정
+## 작업 설명
+<!-- 어떤 작업을 했는지 명확하고 간결하게 설명해주세요. -->
 
-style: 코드 포맷팅, 세미콜론 누락, 코드 변경이 없는 경우
+## 작업 내용
 
-refactor: 코드 리팩토링
+- [ ]
+- [ ]
+- [ ]
 
-test: 테스트 코드, 리팩토링 테스트 코드 추가
+## 추가 논의할 사항
 
-chore: 빌드 업무 수정, 패키지 매니저 수정, production code와 무관한 부분들
+<!-- 추가로 논의해야 하는 사항이 있으면 적어주세요.. -->
+## 예상 동작 방식
 
-comment: 주석 추가 및 변경
+<!-- 예시 동작 방식이 있으면 첨부해주세요. -->
+## 참고할만 한 자료
 
-remove: 파일, 폴더 삭제
-
-rename: 파일, 폴더명 수정
+<!-- 자료가 있다면 첨부해주세요. -->
