@@ -11,7 +11,7 @@ import Link from "next/link";
 export default function Archiving() {
   const { theme } = useTheme();
   return (
-    <div className="w-screen h-full flex flex-col items-center pb-[95px]">
+    <div className="w-screen h-full flex flex-col items-center pb-[250px]">
       <strong className="text-[35px] text-black dark:text-white mt-[92px] max-[450px]:text-[30px]">
         ARCHIVING
       </strong>
