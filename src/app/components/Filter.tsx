@@ -8,10 +8,11 @@ export default function Filter({ filter, setFilter }: FilterProps) {
 
   return (
     <div className="flex gap-4 max-[467px]:grid max-[467px]:grid-cols-2">
-      {category.map((name, index) => {
+      {category.map((name) => {
         return (
           <button
-            key={index}
+            type="button"
+            key={name}
             onClick={() => setFilter(name)}
             className={`box-border flex items-center justify-center ${
               filter === name
