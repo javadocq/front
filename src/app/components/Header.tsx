@@ -15,7 +15,7 @@ export default function Header() {
   const { theme, setTheme } = useTheme();
   const [toggle, setToggle] = useState<boolean>(false);
   return (
-    <nav className="flex w-screen box-border border-b-2 px-10 justify-between items-center h-20">
+    <nav className="fixed flex w-screen box-border border-b-2 px-10 justify-between items-center h-20 bg-white dark:bg-black">
       <div className="flex gap-3 items-center w-2/4">
         <Link href="/">
           <Image src={Logo} alt="로고" />
@@ -25,7 +25,10 @@ export default function Header() {
         </Link>
       </div>
       <div className="flex gap-6">
-        <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+        <button
+          type="button"
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+        >
           {theme === "dark" ? (
             <Image src={Light} alt="라이트모드" />
           ) : (
@@ -63,24 +66,27 @@ export default function Header() {
         {/* lg:hiddne : 화면이 1024px 이상 일때 안 보이게 하기 */}
         {toggle ? (
           <ul className="lg:hidden flex flex-col box-border border-[2px] border-black tetext-xl fixed top-24 right-5 items-center gap-2 box-border border-4 px-4 py-2 z-10 bg-lightBg dark:bg-darkBg">
-            <li
+            <button
+              type="button"
               onClick={() => setToggle(false)}
               className="hover:text-customBlue"
             >
               <Link href="/project">PROJECT</Link>
-            </li>
-            <li
+            </button>
+            <button
+              type="button"
               onClick={() => setToggle(false)}
               className="hover:text-customBlue"
             >
               <Link href="/blog">BLOG</Link>
-            </li>
-            <li
+            </button>
+            <button
+              type="button"
               onClick={() => setToggle(false)}
               className="hover:text-customBlue"
             >
               <Link href="/community">COMMUNITY</Link>
-            </li>
+            </button>
           </ul>
         ) : (
           <></>
