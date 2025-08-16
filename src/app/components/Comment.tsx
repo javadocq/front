@@ -71,6 +71,7 @@ export default function Comment({
             />
           </div>
           <button
+            type="button"
             onClick={() => handlePost(name, comment)}
             className="bg-black text-white dark:text-white text-sm flex-shrink-0 h-9 w-2/12 rounded-br-lg"
           >

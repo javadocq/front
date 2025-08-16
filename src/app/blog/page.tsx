@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -26,16 +26,16 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="w-screen flex flex-col items-center pb-[20px]">
+    <div className="w-screen flex flex-col items-center pb-[20px] pt-20">
       <div className="box-border flex items-center justify-center bg-black dark:bg-darkBg w-56 h-16 rounded-lg mt-10">
         <p className="text-white dark:text-white text-3xl font-bold">BLOG</p>
       </div>
       <div className="grid grid-cols-4 gap-16 mt-16 max-[1380px]:grid-cols-3 max-[1080px]:grid-cols-2 max-[765px]:grid-cols-1">
-        {posts.map((post, index) => {
+        {posts.map((post) => {
           return (
             <Link
               href={post.link}
-              key={index}
+              key={post.title}
               className="box-border border-1 w-[282px] h-[250px] pb-2 rounded-lg flex flex-col items-center bg-lightBg dark:bg-darkBg cursor-pointer shadow-[4px_4px_4px_rgba(0,0,0,0.7)]"
             >
               <div className=" bg-[#FFFFFF]/[0.3] w-[252px] h-[70px] border-white dark:border-white w-[252px] h-[58px] rounded-lg flex items-center justify-center mt-4 px-[20px] shadow-[3px_2px_6px_rgba(0,0,0,0.2)]">

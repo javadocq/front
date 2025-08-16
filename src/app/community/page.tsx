@@ -26,10 +26,10 @@ export default function Home() {
       }
     };
     fetchGetComments();
-  }, [changeVar]);
+  }, []);
 
   return (
-    <div className="mt-16 w-screen flex flex-col items-center pb-20 px-10">
+    <div className="w-screen flex flex-col items-center pb-20 px-10 pt-20">
       <CommentInfo />
       <Comment
         comments={comments}

@@ -30,6 +30,7 @@ export default function ProjectModal({ id, setModal }: ProjectModalProps) {
   const [project, setProject] = useState<ProjectProp | null>(null);
 
   useEffect(() => {
+    // biome-ignore lint/correctness/noNestedComponentDefinitions: <explanation>
     const FetchProjectGet = async () => {
       try {
         const response = await axios.get(`/api/projects/${id}`);
@@ -45,11 +46,15 @@ export default function ProjectModal({ id, setModal }: ProjectModalProps) {
   }, [id]);
   return (
     <div
-      id="default-modal"
+      role="img"
+      onKeyDown={() => {}}
       className="fixed top-0 right-0 left-0 z-50 flex justify-center items-center w-full h-full bg-black bg-opacity-50"
       onClick={() => setModal(false)}
     >
       <div
+        role="tab"
+        tabIndex={0}
+        onKeyDown={() => {}}
         className="relative p-4 w-full max-w-3xl max-h-[85vh] overflow-auto scrollbar-hidden"
         onClick={(e) => e.stopPropagation()}
       >
@@ -103,10 +108,10 @@ export default function ProjectModal({ id, setModal }: ProjectModalProps) {
             <strong className="text-[20px] w-11/12 text-left font-bold leading-relaxed text-black dark:text-white">
               🚀​ 기능
             </strong>
-            {project?.functions?.map((func, index) => {
+            {project?.functions?.map((func) => {
               return (
                 <p
-                  key={index}
+                  key={func}
                   className="text-[16px] w-11/12 text-left text-black dark:text-white"
                 >
                   - {func}
@@ -117,10 +122,10 @@ export default function ProjectModal({ id, setModal }: ProjectModalProps) {
             <strong className="text-[20px] w-11/12 text-left font-bold leading-relaxed text-black dark:text-white">
               ⌛​ 문제 및 해결
             </strong>
-            {project?.solutions?.map((solution, index) => {
+            {project?.solutions?.map((solution) => {
               return (
                 <p
-                  key={index}
+                  key={solution}
                   className="text-[16px] w-11/12 text-left text-black dark:text-white"
                 >
                   - {solution}
@@ -131,10 +136,10 @@ export default function ProjectModal({ id, setModal }: ProjectModalProps) {
             <strong className="text-[20px] w-11/12 font-bold text-left leading-relaxed text-black dark:text-white">
               🏆 느낀점
             </strong>
-            {project?.takeaways?.map((takeaway, index) => {
+            {project?.takeaways?.map((takeaway) => {
               return (
                 <p
-                  key={index}
+                  key={takeaway}
                   className="text-[16px] w-11/12 text-left text-black dark:text-white"
                 >
                   - {takeaway}
@@ -144,10 +149,10 @@ export default function ProjectModal({ id, setModal }: ProjectModalProps) {
           </div>
 
           <div className="flex items-center p-4 md:p-5 border-t border-black rounded-b dark:border-white gap-2 flex-wrap">
-            {project?.category?.map((category, index) => {
+            {project?.category?.map((category) => {
               return (
                 <div
-                  key={index}
+                  key={category}
                   className="box-border flex items-center justify-center 
                      dark:bg-slate-50 dark:text-black bg-filterBg dark:bg-white text-white
                      rounded-3xl font-bold text-[12px] p-1 px-[8px]"

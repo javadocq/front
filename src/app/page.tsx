@@ -6,7 +6,7 @@ import Section from "./components/Section";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center scroll-smooth">
+    <div className="flex flex-col items-center scroll-smooth pt-20">
       <Section>
         <Hook />
       </Section>

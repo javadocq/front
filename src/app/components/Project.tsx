@@ -23,6 +23,7 @@ export default function Project() {
   const [projectId, setProjectId] = useState<number>(0);
 
   useEffect(() => {
+    // biome-ignore lint/correctness/noNestedComponentDefinitions: <explanation>
     const FetchProjectGet = async () => {
       try {
         const response = await axios.get("/api/projects");
@@ -59,7 +60,8 @@ export default function Project() {
       <div className="grid grid-cols-4 gap-16 mt-16 max-[1380px]:grid-cols-3 max-[1080px]:grid-cols-2 max-[765px]:grid-cols-1">
         {filteredProjects.map((project) => {
           return (
-            <div
+            <button
+              type="button"
               key={project.id}
               onClick={() => handleSetProject(project.id)}
               className="box-border border-1 w-72 h-[270px] pb-2 rounded-lg flex flex-col items-center shadow-[4px_4px_4px_rgba(0,0,0,0.7)] bg-lightBg dark:bg-darkBg cursor-pointer"
@@ -81,10 +83,10 @@ export default function Project() {
                 {project.introduce}
               </p>
               <div className="flex w-64 gap-1 mt-3 ml-[5px] overflow-x-hidden">
-                {project.function.map((category, index) => {
+                {project.function.map((category) => {
                   return (
                     <div
-                      key={index}
+                      key={category}
                       className="box-border flex items-center justify-center 
                      dark:bg-white dark:text-black bg-filterBg text-white
                      rounded-3xl font-bold text-[12px] p-1 px-[8px] min-w-[40px] whitespace-nowrap 
@@ -95,7 +97,7 @@ export default function Project() {
                   );
                 })}
               </div>
-            </div>
+            </button>
           );
         })}
       </div>
