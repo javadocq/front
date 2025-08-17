@@ -29,7 +29,7 @@ const dummyData = [
   },
   {
     id: 2,
-    img: "/main/MainProject.png",
+    img: "/project/blog.png",
     name: "JAVADOCQ_BLOG",
     introduce:
       "이 프로젝트는 나만의 개인 블로그를 제작하는 것을 목표로 합니다. 프로젝트 및 학습 내용을 정리하여 공유하면서, 동시에 나 자신을 효과적으로 PR할 수 있도록 구성했습니다. 이 블로그는 이력서처럼 활용될 수 있으며, 새롭게 학습한 Next.js 프레임워크를 사용하여 SSR 렌더링 방식을 적용함으로써 SEO 성능을 향상시켰습니다.",

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 
@@ -32,7 +33,10 @@ export default function MainProjectView() {
         >
           {projectImg.map((img, index) => (
             <SwiperSlide key={index} className="h-full">
-              <div className="w-full h-full flex items-center justify-center">
+              <Link
+                className="w-full h-full flex items-center justify-center"
+                href={`/project`}
+              >
                 <Image
                   src={img}
                   alt={`메인 프로젝트 ${index + 1}`}
@@ -41,7 +45,7 @@ export default function MainProjectView() {
                   className="max-w-full max-h-full object-contain rounded-lg shadow-lg dark:shadow-black/60"
                   priority={index === 0}
                 />
-              </div>
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>

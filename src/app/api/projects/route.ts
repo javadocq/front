@@ -14,7 +14,7 @@ export async function GET() {
     {
       id: 2,
       type: "Next",
-      img: "/main/MainProject.png",
+      img: "/project/blog.png",
       name: "JAVADOCQ_BLOG",
       introduce:
         "나만의 개인 블로그를 만들기 위한 프로젝트입니다. 이전에 사용해보지 않았던 기능들, 예를 들어 Dark Mode와 Three.js 등을 적극적으로 활용하여 사용자들에게 독특하고 차별화된 블로그 경험을 제공하고자 했습니다.",
