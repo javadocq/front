@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+MSG_FILE="${1:-$(git rev-parse --git-path COMMIT_EDITMSG)}"
+echo "[husky] commit-msg hook running: $MSG_FILE"
+
+npx --no -- commitlint --edit "$MSG_FILE"
