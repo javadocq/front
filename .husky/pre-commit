@@ -1,4 +1,10 @@
 #!/usr/bin/env sh
-. "$(dirname "$0")/_/husky.sh"
+# lint-staged 먼저
+npx --no lint-staged
 
-npx lint-staged
+# test 스크립트가 정의돼 있으면만 실행
+if npm run | grep -q -E '^\s*test\s'; then
+  npm test
+else
+  echo "[pre-commit] no test script, skipping"
+fi
