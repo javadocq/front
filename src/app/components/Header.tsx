@@ -15,7 +15,7 @@ export default function Header() {
   const { theme, setTheme } = useTheme();
   const [toggle, setToggle] = useState<boolean>(false);
   return (
-    <nav className="fixed flex w-screen box-border border-b-2 px-10 justify-between items-center h-20 bg-white dark:bg-black">
+    <nav className="fixed z-50 flex w-screen box-border border-b-2 px-10 justify-between items-center h-20 bg-white dark:bg-black">
       <div className="flex gap-3 items-center w-2/4">
         <Link href="/">
           <Image src={Logo} alt="로고" />

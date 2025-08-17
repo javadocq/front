@@ -22,16 +22,12 @@ export default function Section({
   const opacity = useTransform(
     scrollYProgress,
     [0, 0.15, 0.25, 0.75, 1],
-    [0, 0.25, 1, 1, 0]
+    [0, 0.25, 1, 1, 0],
   );
 
   const y = useTransform(scrollYProgress, [0, 0.25, 0.75, 1], [24, 0, -8, -16]);
 
-  const blurPx = useTransform(
-    scrollYProgress,
-    [0, 0.35, 0.65, 1],
-    [8, 0, 0, 8]
-  );
+  const blurPx = useTransform(scrollYProgress, [0, 0.35, 1, 1], [8, 0, 0, 8]);
   const filter = useMotionTemplate`blur(${blurPx}px)`;
 
   return (
