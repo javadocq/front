@@ -57,7 +57,6 @@ const dummyData = [
   },
   {
     id: 3,
-    type: "Next",
     img: "/project/ericalion.png",
     name: "멋쟁이사자처럼 :: 한양대 에리카 홈페이지",
     role: "프론트엔드 개발 (모집 페이지, PR 페이지, 백엔드 연결)",
@@ -83,7 +82,6 @@ const dummyData = [
   },
   {
     id: 4,
-    type: "React",
     img: "/project/indiflow.png",
     name: "Indiflow",
     introduce:
@@ -110,7 +108,6 @@ const dummyData = [
   },
   {
     id: 5,
-    type: "React",
     img: "/project/hylight.png",
     name: "HYLIGHT-ESPERO",
     introduce:
@@ -134,6 +131,37 @@ const dummyData = [
     category: ["React", "Styled-coponents", "Spring", "MySQL"],
     deploy: "https://likelion-espero.vercel.app/",
     velog: "-",
+  },
+  {
+    id: 6,
+    img: "/project/BookPizza.png",
+    name: "책을 피자",
+    introduce:
+      "책을 읽으면서 편리하게 메모하고, 감성적인 스톱워치와 함께 독서에 몰입해보세요.",
+    role: "프론트엔드 개발 (전체 페이지)",
+    functions: [
+      "메모들을 한 곳에서 편리하게 추가하고 관리",
+      "책장 별로 읽고 있는 책들을 모아보기",
+      "책 별로 독서 기록을 관리",
+      "독서에 몰입할 수 있는 감성 스톱워치 기능",
+    ],
+    solutions: [
+      "로컬 갤러리 이미지가 빌드/업데이트 시 사라지는 문제 ➡️ 이미지 파일 경로 의존을 제거하고 base64 Data URL로 변환해 앱 내부에 영구 보관",
+      "서버 비용 절감(트래픽/스토리지 미발생) ➡️ SQLite3(react-native-sqlite-storage 또는 Expo SQLite)로 로컬 영속 저장소 구성",
+      "Maze 기반 A/B 테스트에서 드러난 UX 오류 ➡️ 재현→원인/분석→수정(예: 터치 히트 영역 확대·로딩 상태 표시·에러 핸들링)",
+      "앱 배포 전 사용자 피드백 수집 및 반영 ➡️ 외부 테스터 5인의 피드백을 바탕으로 UI/UX 개선 및 버그 수정",
+    ],
+    takeaways: [
+      "Expo에서 시작해 Bare Workflow까지 전환하면서 앱 빌드와 배포 과정 전반을 직접 경험하며 모바일 앱 개발에 대한 이해를 넓혔습니다.",
+      "앱스토어 심사, 광고(AdMob) 설정, 개인정보 처리 방침 등록 등 실제 서비스 운영에 필요한 과정을 겪으며 서비스 개발이 단순한 코드 작성이 아님을 배웠습니다.",
+      "책 메모 앱을 개발하며 로컬 DB 관리, UI/UX 설계, 컴포넌트 구조화 등의 고민을 통해 사용자 경험 중심의 사고를 기를 수 있었습니다.",
+      "개발 과정에서 마주한 에러와 문제들을 해결하는 과정 자체가 큰 학습이 되었고, 작은 개선들이 쌓여 서비스 완성도로 이어진다는 점을 깨달았습니다.",
+    ],
+    category: ["React Native", "styled-components", "Expo", "SQLite"],
+    deploy:
+      "https://apps.apple.com/kr/app/%EC%B1%85%EC%9D%84-%ED%94%BC%EC%9E%90-%EC%A0%9C%EC%9D%BC-%ED%8E%B8%EB%A6%AC%ED%95%98%EA%B3%A0-%EA%B0%90%EC%84%B1%EC%A0%81%EC%9D%B8-%EB%8F%85%EC%84%9C-%EA%B8%B0%EB%A1%9D-%EC%95%B1/id6748723998",
+    velog:
+      "https://velog.io/@javadocq/%EC%B1%85%EC%9D%84-%ED%94%BC%EC%9E%90-%EA%B0%9C%EB%B0%9C%EA%B8%B0-1-%EA%B0%90%EC%84%B1-%EB%8F%85%EC%84%9C-%EC%95%B1%EC%9D%84-%EB%A7%8C%EB%93%A4%EA%B8%B0%EB%A1%9C-%ED%95%9C-%EC%9D%B4%EC%9C%A0",
   },
 ];
 
