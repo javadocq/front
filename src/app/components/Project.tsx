@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Filter from "./Filter";
 import axios from "axios";
@@ -101,8 +102,9 @@ export default function Project() {
           );
         })}
       </div>
-
-      {modal && <ProjectModal id={projectId} setModal={setModal} />}
+      <AnimatePresence>
+        {modal && <ProjectModal id={projectId} setModal={setModal} />}
+      </AnimatePresence>
     </div>
   );
 }
