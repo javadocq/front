@@ -5,6 +5,7 @@ import Link from "next/link";
 import Arrow_Black from "@/../../public/project/arrow_right.svg";
 import Arrow_White from "@/../../public/project/arrow_right_white.svg";
 import useTheme from "next-theme";
+import { motion } from "framer-motion";
 
 interface ProjectModalProps {
   id: number;
@@ -38,17 +39,23 @@ export default function ProjectModal({ id, setModal }: ProjectModalProps) {
       } catch (error) {
         console.error("An unexpected error occurred", error);
         throw new Error(
-          "서비스에 문제가 발생했습니다. 잠시 후 다시 시도해주세요."
+          "서비스에 문제가 발생했습니다. 잠시 후 다시 시도해주세요.",
         );
       }
     };
     FetchProjectGet();
   }, [id]);
   return (
-    <div
+    <motion.div
+      className="modal fixed top-0 right-0 left-0 z-50 flex justify-center items-center w-full h-full bg-black bg-opacity-50"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{
+        duration: 0.7,
+      }}
       role="img"
       onKeyDown={() => {}}
-      className="fixed top-0 right-0 left-0 z-50 flex justify-center items-center w-full h-full bg-black bg-opacity-50"
       onClick={() => setModal(false)}
     >
       <div
@@ -188,6 +195,6 @@ export default function ProjectModal({ id, setModal }: ProjectModalProps) {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
