@@ -1,10 +1,9 @@
 "use client";
 
-import Image from "next/image";
-import Github_White from "@/../../public/main/github-mark.svg";
-import Github_Black from "@/../../public/main/github-mark-white.svg";
-import Note_Stack_White from "@/../../public/main/note_stack_white.svg";
-import Note_Stack_Black from "@/../../public/main/note_stack_black.svg";
+import GithubWhite from "../../icons/main/github-mark.svg";
+import GithubBlack from "../../icons/main/github-mark-white.svg";
+import NoteStackWhite from "../../icons/main/note_stack_white.svg";
+import NoteStackBlack from "../../icons/main/note_stack_black.svg";
 import useTheme from "next-theme";
 import Link from "next/link";
 
@@ -18,9 +17,9 @@ export default function Archiving() {
       <div className="flex gap-[14px] mt-[104px] max-[450px]:flex-col max-[450px]:mt-[40px]">
         <div className="flex flex-col gap-[15px] w-[400px] max-[450px]:w-[300px] h-[242px] rounded-[10px] bg-lightBg dark:bg-darkBg pt-[23px] pl-[32px]">
           {theme === "light" ? (
-            <Image src={Github_White} alt="깃허브" width={70} height={70} />
+            <GithubWhite width={70} height={70} />
           ) : (
-            <Image src={Github_Black} alt="깃허브" width={70} height={70} />
+            <GithubBlack width={70} height={70} />
           )}
           <strong className="text-[35px] font-bold">GITHUB</strong>
           <Link
@@ -32,9 +31,9 @@ export default function Archiving() {
         </div>
         <div className="flex flex-col gap-[15px] w-[400px] max-[450px]:w-[300px] h-[242px] rounded-[10px] bg-lightBg dark:bg-darkBg pt-[23px] pl-[32px]">
           {theme === "light" ? (
-            <Image src={Note_Stack_White} alt="벨로그" width={70} height={70} />
+            <NoteStackWhite width={70} height={70} />
           ) : (
-            <Image src={Note_Stack_Black} alt="벨로그" width={70} height={70} />
+            <NoteStackBlack width={70} height={70} />
           )}
           <strong className="text-[35px] font-bold">VELOG</strong>
           <Link

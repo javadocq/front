@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
-import Arrow_Black from "@/../../public/project/arrow_right.svg";
-import Arrow_White from "@/../../public/project/arrow_right_white.svg";
+import ArrowBlack from "../../icons/project/arrow_right.svg";
+import ArrowWhite from "../../icons/project/arrow_right_white.svg";
 import useTheme from "next-theme";
 import { motion } from "framer-motion";
 
@@ -31,7 +31,6 @@ export default function ProjectModal({ id, setModal }: ProjectModalProps) {
   const [project, setProject] = useState<ProjectProp | null>(null);
 
   useEffect(() => {
-    // biome-ignore lint/correctness/noNestedComponentDefinitions: <explanation>
     const FetchProjectGet = async () => {
       try {
         const response = await axios.get(`/api/projects/${id}`);
@@ -175,9 +174,9 @@ export default function ProjectModal({ id, setModal }: ProjectModalProps) {
               className="hover:text-customBlue w-112 flex-wrap flex gap-[2px]"
             >
               {theme === "light" ? (
-                <Image src={Arrow_Black} alt="화살표" width={10} height={10} />
+                <ArrowBlack width={10} height={10} />
               ) : (
-                <Image src={Arrow_White} alt="화살표" width={10} height={10} />
+                <ArrowWhite width={10} height={10} />
               )}
               배포 주소 : {project?.deploy}
             </Link>
@@ -186,9 +185,9 @@ export default function ProjectModal({ id, setModal }: ProjectModalProps) {
               className="hover:text-customBlue w-112 flex-wrap flex gap-[2px]"
             >
               {theme === "light" ? (
-                <Image src={Arrow_Black} alt="화살표" width={10} height={10} />
+                <ArrowBlack width={10} height={10} />
               ) : (
-                <Image src={Arrow_White} alt="화살표" width={10} height={10} />
+                <ArrowWhite width={10} height={10} />
               )}
               velog 주소 : {project?.velog}
             </Link>

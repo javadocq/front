@@ -1,11 +1,12 @@
-import Image from "next/image";
-import Profile from "../../../public/main/profile.svg";
+"use client";
+
+import Profile from "../../icons/main/profile.svg";
 
 export default function AboutMe() {
   return (
     <div className="w-screen  h-full flex max-[450px]:flex-col justify-center items-center mt-[203px] max-[450px]:mt-[100px]">
       <div className="flex flex-col justify-start mr-[120px] max-[450px]:mr-[0px]">
-        <Image src={Profile} alt="프로필" width={250} height={250} />
+        <Profile />
         <strong className="text-[40px] font-bold text-black dark:text-white mt-[45px]">
           이종원
         </strong>
