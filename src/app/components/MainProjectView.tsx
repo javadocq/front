@@ -2,20 +2,27 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
-
 import "swiper/css";
 import "swiper/css/autoplay";
 
 export default function MainProjectView() {
-  const projectImg: string[] = [
-    "/project/hylight.png",
-    "/project/ericalion.png",
-    "/project/blog.png",
-    "/project/indiflow.png",
-    "/project/whenWeWillMeet.png",
-  ];
+  const [projectImg, setProjectImg] = useState<string[]>([]);
+
+  useEffect(() => {
+    handleProjectGet();
+  }, []);
+
+  const handleProjectGet = async () => {
+    const response = await axios.get("/api/projects");
+    setProjectImg((prev) => [
+      ...prev,
+      ...response.data.map((project: { img: string }) => project.img),
+    ]);
+  };
   return (
     <div className="w-screen h-full flex flex-col items-center mt-[190px]">
       <strong className="text-[35px] font-bold text-black dark:text-white max-[450px]:text-[30px]">
@@ -27,9 +34,9 @@ export default function MainProjectView() {
           spaceBetween={50}
           slidesPerView={3}
           modules={[Autoplay]}
-          autoplay={{ delay: 100, disableOnInteraction: false }} // 유저가 터치/드래그해도 계속 자동재생
-          loop //반복 재생
-          speed={2000} //속도 조절
+          autoplay={{ delay: 100, disableOnInteraction: false }}
+          loop={projectImg.length > 3}
+          speed={2000}
         >
           {projectImg.map((img, index) => (
             <SwiperSlide key={index} className="h-full">
