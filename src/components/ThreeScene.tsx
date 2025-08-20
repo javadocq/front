@@ -17,7 +17,7 @@ export default function ThreeScene() {
       40, // Camera frustum vertical field of view.
       window.innerWidth / window.innerHeight, // Camera frustum aspect ratio.
       0.1, // Camera frustum near plane.
-      1000 // Camera frustum far plane.
+      1000, // Camera frustum far plane.
     );
     camera.position.set(5, 5, 5); // 카메라 위치 설정
     camera.lookAt(0, 0, 0); // 큐브들이 정중앙에 오도록 카메라 시선 조정
@@ -54,7 +54,7 @@ export default function ThreeScene() {
           cube.position.set(
             i * (size * gap) - (cubeSize * (size + gap)) / 2, // X 좌표
             j * (size * gap) - (cubeSize * (size + gap)) / 2, // Y 좌표
-            k * (size * gap) - (cubeSize * (size + gap)) / 2 // Z 좌표
+            k * (size * gap) - (cubeSize * (size + gap)) / 2, // Z 좌표
           );
 
           scene.add(cube);
@@ -64,7 +64,7 @@ export default function ThreeScene() {
           line.position.set(
             i * (size * gap) - (cubeSize * (size + gap)) / 2, // X 좌표
             j * (size * gap) - (cubeSize * (size + gap)) / 2, // Y 좌표
-            k * (size * gap) - (cubeSize * (size + gap)) / 2 // Z 좌표
+            k * (size * gap) - (cubeSize * (size + gap)) / 2, // Z 좌표
           );
           scene.add(line);
         }

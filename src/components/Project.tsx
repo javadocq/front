@@ -24,12 +24,11 @@ export default function Project() {
   const [projectId, setProjectId] = useState<number>(0);
 
   useEffect(() => {
-    // biome-ignore lint/correctness/noNestedComponentDefinitions: <explanation>
     const FetchProjectGet = async () => {
       try {
         const response = await axios.get("/api/projects");
         setProjects(response.data);
-        setFilteredProjects(response.data);
+        console.log(response.data);
       } catch (error) {
         console.error("An unexpected error occurred", error);
         throw new Error(

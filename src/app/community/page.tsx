@@ -2,8 +2,8 @@
 
 import axios from "axios";
 import { useEffect, useState } from "react";
-import CommentInfo from "../components/CommentInfo";
-import Comment from "../components/Comment";
+import CommentInfo from "../../components/CommentInfo";
+import Comment from "../../components/Comment";
 
 interface CommentsProps {
   id: number;

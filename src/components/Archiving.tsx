@@ -1,9 +1,9 @@
 "use client";
 
-import GithubWhite from "../../icons/main/github-mark.svg";
-import GithubBlack from "../../icons/main/github-mark-white.svg";
-import NoteStackWhite from "../../icons/main/note_stack_white.svg";
-import NoteStackBlack from "../../icons/main/note_stack_black.svg";
+import GithubWhite from "../assets/icons/main/github-mark.svg";
+import GithubBlack from "../assets/icons/main/github-mark-white.svg";
+import NoteStackWhite from "../assets/icons/main/note_stack_white.svg";
+import NoteStackBlack from "../assets/icons/main/note_stack_black.svg";
 import useTheme from "next-theme";
 import Link from "next/link";
 

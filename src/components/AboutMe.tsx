@@ -1,6 +1,6 @@
 "use client";
 
-import Profile from "../../icons/main/profile.svg";
+import Profile from "../assets/icons/main/profile.svg";
 
 export default function AboutMe() {
   return (

@@ -1,8 +1,8 @@
-import AboutMe from "./components/AboutMe";
-import Archiving from "./components/Archiving";
-import Hook from "./components/Hook";
-import MainProjectView from "./components/MainProjectView";
-import Section from "./components/Section";
+import AboutMe from "../components/AboutMe";
+import Archiving from "../components/Archiving";
+import Hook from "../components/Hook";
+import MainProjectView from "../components/MainProjectView";
+import Section from "../components/Section";
 
 export default function Home() {
   return (

@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
-import ArrowBlack from "../../icons/project/arrow_right.svg";
-import ArrowWhite from "../../icons/project/arrow_right_white.svg";
+import ArrowBlack from "../assets/icons/project/arrow_right.svg";
+import ArrowWhite from "../assets/icons/project/arrow_right_white.svg";
 import useTheme from "next-theme";
 import { motion } from "framer-motion";
 

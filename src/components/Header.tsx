@@ -1,13 +1,13 @@
 "use client";
 
 import useTheme from "next-theme";
-import Logo from "../../icons/header/logo.svg";
-import ToggleDark from "../../icons/header/toggle_light.svg";
-import ToggleLight from "../../icons/header/toggle_dark.svg";
+import Logo from "../assets/icons/header/logo.svg";
+import ToggleDark from "../assets/icons/header/toggle_light.svg";
+import ToggleLight from "../assets//icons/header/toggle_dark.svg";
 import Link from "next/link";
 import { useState } from "react";
-import Dark from "../../icons/header/darkMode_moon.svg";
-import Light from "../../icons/header/lightMode_sun.svg";
+import Dark from "../assets/icons/header/darkMode_moon.svg";
+import Light from "../assets/icons/header/lightMode_sun.svg";
 
 export default function Header() {
   const { theme, setTheme } = useTheme();
