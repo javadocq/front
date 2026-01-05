@@ -37,9 +37,6 @@ export default function Header() {
           <Link href="/blog" className="hover:text-customBlue">
             BLOG
           </Link>
-          <Link href="/community" className="hover:text-customBlue">
-            COMMUNITY
-          </Link>
         </div>
         {/* lg:hiddne : 화면이 1024px 이상 일때 안 보이게 하기 */}
         <div className="lg:hidden flex gap-6 items-center text-2xl relative h-20 cursor-pointer">
@@ -50,8 +47,8 @@ export default function Header() {
           )}
         </div>
         {/* lg:hiddne : 화면이 1024px 이상 일때 안 보이게 하기 */}
-        {toggle ? (
-          <ul className="lg:hidden flex flex-col box-border border-[2px] border-black tetext-xl fixed top-24 right-5 items-center gap-2 box-border border-4 px-4 py-2 z-10 bg-lightBg dark:bg-darkBg">
+        {toggle && (
+          <ul className="lg:hidden flex flex-col box-border border-[2px] rounded-[10px] border-black tetext-xl fixed top-24 right-5 items-center gap-2 box-border border-4 px-4 py-2 z-10 bg-lightBg dark:bg-darkBg">
             <button
               type="button"
               onClick={() => setToggle(false)}
@@ -66,16 +63,7 @@ export default function Header() {
             >
               <Link href="/blog">BLOG</Link>
             </button>
-            <button
-              type="button"
-              onClick={() => setToggle(false)}
-              className="hover:text-customBlue"
-            >
-              <Link href="/community">COMMUNITY</Link>
-            </button>
           </ul>
-        ) : (
-          <></>
         )}
       </div>
     </nav>

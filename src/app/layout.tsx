@@ -72,7 +72,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class">
           <Header />
           {/* 자식 컴포넌트가 마운트 되거나 언마운트될 때 애니메이션 처리 */}
-          <AnimatePresence>
+          <AnimatePresence mode="wait">
             <motion.div
               key={pathname} // 현재 경로가 변경되면 새로운 key가 적용
               variants={variants}

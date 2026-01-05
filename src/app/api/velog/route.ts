@@ -15,15 +15,23 @@ export async function GET() {
 
     const feed = await parser.parseURL("https://v2.velog.io/rss/javadocq");
 
-    const posts = feed.items.map((item) => {
-      return {
-        title: item.title,
-        link: item.link,
-        summary: item.contentSnippet?.slice(0, 100),
-        pubDate: item.pubDate,
-        profile: feed.image?.url,
-      };
-    });
+    const posts = Array.from(
+      new Map(
+        feed.items.map((item) => {
+          const key = `${item.title}-${item.pubDate}`;
+          return [
+            key,
+            {
+              title: item.title,
+              link: item.link,
+              summary: item.contentSnippet?.slice(0, 100),
+              pubDate: item.pubDate,
+              profile: feed.image?.url,
+            },
+          ];
+        }),
+      ).values(),
+    );
     if (!posts.length) {
       return NextResponse.json({ error: "No posts found" }, { status: 404 });
     }
@@ -33,7 +41,7 @@ export async function GET() {
   } catch {
     return NextResponse.json(
       { error: "Failed to fetch Velog posts" },
-      { status: 400 }
+      { status: 400 },
     );
   }
 }

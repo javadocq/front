@@ -13,18 +13,22 @@ interface Post {
 }
 
 export default function Home() {
+  console.log("Blog component rendered");
   const [posts, setPosts] = useState<Post[]>([]);
 
   useEffect(() => {
+    console.log("useEffect triggered");
     const fetchVelogPosts = async () => {
+      console.log("Fetching Velog posts...");
       const response = await fetch("/api/velog");
       const data = await response.json();
+      console.log("Velog posts fetched:", data);
       setPosts(data);
     };
-
     fetchVelogPosts();
   }, []);
 
+  console.log("Rendering blog posts:", posts);
   return (
     <div className="w-screen flex flex-col items-center pb-[20px] pt-20">
       <div className="box-border flex items-center justify-center bg-black dark:bg-darkBg w-56 h-16 rounded-lg mt-10">
