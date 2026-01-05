@@ -51,14 +51,17 @@ export default function AboutMe() {
           </strong>
           <div className="flex mt-[20px]">
             <div className="flex flex-col gap-[16px] w-[208px] max-[450px]:w-[148px] max-[450px]:whitespace-nowrap">
-              <p>2020. 03 ~ 2020.09</p>
-              <p>2024. 03 ~ 2024.12</p>
-              <p>2024. 01 ~ ing</p>
+              <p>2020.03 ~ 2020.09</p>
+              <p>2024.03 ~ 2024.12</p>
+              <p>2025.03 ~ 2025.12</p>
+              <p>2025.07 ~ 2025.11</p>
             </div>
             <div className="flex flex-col gap-[16px] ml-[31px] max-[450px]:ml-[-15px]">
               <p>ICT 보안 엔지니어 과정 수료 (KGITBANK)</p>
               <p>멋쟁이사자처럼 대학 12기 프론트엔드 수료</p>
               <p>멋쟁이사자처럼 대학 13기 대표</p>
+              <p>구름톤 4기 미르미</p>
+              <p>디프만 17기 Web 파트 수료</p>
             </div>
           </div>
         </div>
@@ -69,13 +72,17 @@ export default function AboutMe() {
           <div className="flex mt-[20px]">
             <div className="flex flex-col gap-[16px] w-[208px] max-[450px]:w-[148px]">
               <p>FRONT</p>
-              <p>BACK</p>
-              <p>DevOps/Deployment</p>
+              <p>Styling</p>
+              <p>Build/Deploy</p>
+              <p>Collab</p>
+              <p>Etc</p>
             </div>
             <div className="flex flex-col gap-[16px] ml-[31px] max-[450px]:ml-[-15px]">
-              <p>React, TypeScript, Next.js</p>
-              <p>Spring Boot, MySQL</p>
-              <p>AWS(S3, EC2), Vercel, Netlify, Cloudtype</p>
+              <p>React, React-Native, TypeScript, Next.js</p>
+              <p>Styled-Components, Tailwind CSS</p>
+              <p>WebPack, Next.js Build, Vercel</p>
+              <p>Git/GitHub, Issues/PR, Conventional Commits, Notion, Jira</p>
+              <p>REST API, 반응형 UI, Async/await</p>
             </div>
           </div>
         </div>
