@@ -24,7 +24,7 @@ export default function Project() {
   const [projectId, setProjectId] = useState<number>(0);
 
   useEffect(() => {
-    const FetchProjectGet = async () => {
+    const fetchProjectGet = async () => {
       try {
         const response = await axios.get("/api/projects");
         setProjects(response.data);
@@ -36,7 +36,7 @@ export default function Project() {
         );
       }
     };
-    FetchProjectGet();
+    fetchProjectGet();
   }, []);
 
   useEffect(() => {
@@ -82,15 +82,15 @@ export default function Project() {
               <p className="text-[12px] text-left w-64 line-clamp-2 mt-1 ml-[5px]">
                 {project.introduce}
               </p>
-              <div className="flex w-64 gap-1 mt-3 ml-[5px] overflow-x-hidden">
+              <div className="flex w-64 gap-1 mt-3 ml-[5px] overflow-x-auto scrollbar-hidden">
                 {project.function.map((category) => {
                   return (
                     <div
                       key={category}
                       className="box-border flex items-center justify-center 
                      dark:bg-white dark:text-black bg-filterBg text-white
-                     rounded-3xl font-bold text-[12px] p-1 px-[8px] min-w-[40px] whitespace-nowrap 
-                     overflow-hidden text-ellipsis"
+                     rounded-3xl font-bold text-[12px] p-1 px-[8px] min-w-[40px] whitespace-nowrap
+                     shrink-0"
                     >
                       {category}
                     </div>
