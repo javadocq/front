@@ -1,6 +1,7 @@
 "use client";
 
 import Profile from "../assets/icons/main/profile.svg";
+import { ABOUT_ME_DATA } from "../constant/about/ABOUT_ME_DATA";
 
 export default function AboutMe() {
   return (
@@ -21,12 +22,14 @@ export default function AboutMe() {
           </strong>
           <div className="flex mt-[20px]">
             <div className="flex flex-col gap-[16px] w-[208px] max-[450px]:w-[148px]">
-              <p>2019.02</p>
-              <p>2023. 03 ~ ing</p>
+              {ABOUT_ME_DATA[0].data.map((item, index) => {
+                return <p key={`${item.date}-${index}`}>{item.date}</p>;
+              })}
             </div>
             <div className="flex flex-col gap-[16px] ml-[31px] max-[450px]:ml-[-15px]">
-              <p>서울공업고등학교 졸업</p>
-              <p>한양대 에리카 컴퓨터학부 재학</p>
+              {ABOUT_ME_DATA[0].data.map((item, index) => {
+                return <p key={`${item.date}-${index}`}>{item.content}</p>;
+              })}
             </div>
           </div>
         </div>
@@ -36,12 +39,14 @@ export default function AboutMe() {
           </strong>
           <div className="flex mt-[20px]">
             <div className="flex flex-col gap-[16px] w-[208px] max-[450px]:w-[148px]">
-              <p>2024. 12</p>
-              <p>2025. 02</p>
+              {ABOUT_ME_DATA[1].data.map((item, index) => {
+                return <p key={`${item.date}-${index}`}>{item.date}</p>;
+              })}
             </div>
             <div className="flex flex-col gap-[16px] ml-[31px] max-[450px]:ml-[-15px]">
-              <p>(교내) HY-THONE 대상</p>
-              <p>(교외) 블레이버스 해커톤 대상</p>
+              {ABOUT_ME_DATA[1].data.map((item, index) => {
+                return <p key={`${item.date}-${index}`}>{item.content}</p>;
+              })}
             </div>
           </div>
         </div>
@@ -51,17 +56,14 @@ export default function AboutMe() {
           </strong>
           <div className="flex mt-[20px]">
             <div className="flex flex-col gap-[16px] w-[208px] max-[450px]:w-[148px] max-[450px]:whitespace-nowrap">
-              <p>2020.03 ~ 2020.09</p>
-              <p>2024.03 ~ 2024.12</p>
-              <p>2025.03 ~ 2025.12</p>
-              <p>2025.07 ~ 2025.11</p>
+              {ABOUT_ME_DATA[2].data.map((item, index) => {
+                return <p key={`${item.date}-${index}`}>{item.date}</p>;
+              })}
             </div>
             <div className="flex flex-col gap-[16px] ml-[31px] max-[450px]:ml-[-15px]">
-              <p>ICT 보안 엔지니어 과정 수료 (KGITBANK)</p>
-              <p>멋쟁이사자처럼 대학 12기 프론트엔드 수료</p>
-              <p>멋쟁이사자처럼 대학 13기 대표</p>
-              <p>구름톤 4기 미르미</p>
-              <p>디프만 17기 Web 파트 수료</p>
+              {ABOUT_ME_DATA[2].data.map((item, index) => {
+                return <p key={`${item.date}-${index}`}>{item.content}</p>;
+              })}
             </div>
           </div>
         </div>
@@ -71,18 +73,26 @@ export default function AboutMe() {
           </strong>
           <div className="flex mt-[20px]">
             <div className="flex flex-col gap-[16px] w-[208px] max-[450px]:w-[148px]">
-              <p>FRONT</p>
-              <p>Styling</p>
-              <p>Build/Deploy</p>
-              <p>Collab</p>
-              <p>Etc</p>
+              {ABOUT_ME_DATA[3].data.map((item, index) => {
+                return <p key={`${item.part}-${index}`}>{item.part}</p>;
+              })}
             </div>
             <div className="flex flex-col gap-[16px] ml-[31px] max-[450px]:ml-[-15px]">
-              <p>React, React-Native, TypeScript, Next.js</p>
-              <p>Styled-Components, Tailwind CSS</p>
-              <p>WebPack, Next.js Build, Vercel</p>
-              <p>Git/GitHub, Issues/PR, Conventional Commits, Notion, Jira</p>
-              <p>REST API, 반응형 UI, Async/await</p>
+              {ABOUT_ME_DATA[3].data.map((item, index) => {
+                return <p key={`${item.part}-${index}`}>{item.content}</p>;
+              })}
+            </div>
+          </div>
+        </div>
+        <div className="mt-[53px]">
+          <strong className="text-[25px] text-black dark:text-white font-bold">
+            Qualifications
+          </strong>
+          <div className="flex mt-[20px]">
+            <div className="flex flex-col gap-[16px] w-[208px] max-[450px]:w-[148px]">
+              {ABOUT_ME_DATA[4].data.map((item, index) => {
+                return <p key={`${item.content}-${index}`}>{item.content}</p>;
+              })}
             </div>
           </div>
         </div>
