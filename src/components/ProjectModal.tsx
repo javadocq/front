@@ -2,9 +2,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
-import ArrowBlack from "../assets/icons/project/arrow_right.svg";
-import ArrowWhite from "../assets/icons/project/arrow_right_white.svg";
-import useTheme from "next-theme";
 import { motion } from "framer-motion";
 
 interface ProjectModalProps {
@@ -27,11 +24,10 @@ interface ProjectProp {
 }
 
 export default function ProjectModal({ id, setModal }: ProjectModalProps) {
-  const { theme } = useTheme();
   const [project, setProject] = useState<ProjectProp | null>(null);
 
   useEffect(() => {
-    const FetchProjectGet = async () => {
+    const fetchProjectGet = async () => {
       try {
         const response = await axios.get(`/api/projects/${id}`);
         setProject(response.data);
@@ -42,7 +38,7 @@ export default function ProjectModal({ id, setModal }: ProjectModalProps) {
         );
       }
     };
-    FetchProjectGet();
+    fetchProjectGet();
   }, [id]);
   return (
     <motion.div
@@ -173,22 +169,12 @@ export default function ProjectModal({ id, setModal }: ProjectModalProps) {
               href={project?.deploy || ""}
               className="hover:text-customBlue w-112 flex-wrap flex gap-[2px]"
             >
-              {theme === "light" ? (
-                <ArrowBlack width={10} height={10} />
-              ) : (
-                <ArrowWhite width={10} height={10} />
-              )}
               배포 주소 : {project?.deploy}
             </Link>
             <Link
               href={project?.velog || ""}
               className="hover:text-customBlue w-112 flex-wrap flex gap-[2px]"
             >
-              {theme === "light" ? (
-                <ArrowBlack width={10} height={10} />
-              ) : (
-                <ArrowWhite width={10} height={10} />
-              )}
               velog 주소 : {project?.velog}
             </Link>
           </div>
