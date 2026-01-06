@@ -196,6 +196,37 @@ const dummyData = [
     deploy: "https://bobtory.com/",
     velog: "",
   },
+  {
+    id: 8,
+    img: "/project/picoWorld.png",
+    name: "Pico World",
+    introduce:
+      "Pico World는 선택한 캐릭터가 나의 감정에 맞춰 답장을 남겨주는 감정 기록 앱이에요. 감정을 그대로 적고, 친구와 나누거나 나만의 공간에 담아두며, 감정의 흐름을 편안하게 바라볼 수 있어요.",
+    role: "프론트엔드 개발 (로그인 관련 페이지, 온보딩 페이지 페이지, 감정 상세 페이지)",
+    functions: [
+      "나의 감정을 기록하고 피드백을 받을 수 있습니다.",
+      "다양한 AI 캐릭터를 통해 피드백을 받을 수 있습니다.",
+      "나의 감정을 공유하고 친구와 나눌 수 있습니다.",
+    ],
+    solutions: [
+      "바텀 내비게이션 탭 이동 시 반응이 느린 문제 ➡️ 탭 전환 시 0.4초 이내로 반응하도록 렌더링 및 애니메이션 성능을 최적화했습니다.",
+      "cloneElement 사용으로 SVG 아이콘이 매 렌더링마다 재생성되는 문제 ➡️ 아이콘을 React Element가 아닌 컴포넌트 자체로 관리하여 불필요한 재렌더링을 제거했습니다.",
+      "Animated API 사용으로 JS 스레드가 바쁠 경우 애니메이션이 지연되는 문제 ➡️ Reanimated를 도입해 UI 스레드에서 애니메이션을 처리하도록 개선했습니다.",
+      "탭 변경 시 모든 아이콘이 함께 리렌더링되는 문제 ➡️ React.memo와 props 비교를 적용해 상태가 변경된 아이콘만 렌더링되도록 최적화했습니다.",
+      "Image 컴포넌트에 직접 shadow를 적용할 경우 이미지가 일부만 보이는 문제 ➡️ shadow를 View로 분리해 감싸는 구조로 변경하여 정상 렌더링을 보장했습니다.",
+    ],
+    takeaways: [
+      "UI 반응 속도 저하의 원인을 단순한 느낌이 아니라 렌더링 구조와 스레드 관점에서 분석하는 경험을 할 수 있었습니다.",
+      "React Element 생성 방식과 렌더링 비용의 관계를 이해하며 성능 관점에서 컴포넌트 설계의 중요성을 배웠습니다.",
+      "JS 스레드와 UI 스레드의 역할 차이를 이해하고, 애니메이션 구현 방식에 따라 사용자 체감 성능이 크게 달라질 수 있음을 체감했습니다.",
+      "React.memo를 활용해 상태 변화 범위를 제한함으로써, 작은 최적화가 전체 UX에 큰 영향을 줄 수 있다는 것을 경험했습니다.",
+      "플랫폼별 UI 특성(RN shadow 처리)을 고려한 구조 설계의 중요성을 배웠습니다.",
+    ],
+    category: ["React Native", "TypeScript", "styled-components", "Expo"],
+    deploy:
+      "https://apps.apple.com/kr/app/%ED%94%BC%EC%BD%94%EC%9B%94%EB%93%9C-pico-world-ai%ED%94%BC%EB%93%9C%EB%B0%B1-%EC%B9%9C%EA%B5%AC-%EA%B3%B5%EC%9C%A0/id6755540527 피코월드 Pico World - AI피드백&친구 공유",
+    velog: "",
+  },
 ];
 
 export async function GET(req: NextRequest) {

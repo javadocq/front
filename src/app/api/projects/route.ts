@@ -74,6 +74,15 @@ export async function GET() {
         "Expo",
       ],
     },
+    {
+      id: 8,
+      type: "2025",
+      img: "/project/picoWorld.png",
+      name: "Pico World (앱)",
+      introduce:
+        "Pico World는 선택한 캐릭터가 나의 감정에 맞춰 답장을 남겨주는 감정 기록 앱이에요. 감정을 그대로 적고, 친구와 나누거나 나만의 공간에 담아두며, 감정의 흐름을 편안하게 바라볼 수 있어요.",
+      function: ["React Native", "TypeScript", "styled-components", "Expo"],
+    },
   ];
 
   return NextResponse.json(dummyData);
