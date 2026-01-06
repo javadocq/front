@@ -59,6 +59,21 @@ export async function GET() {
 
       function: ["React Native", "styled-components", "Expo", "SQLite"],
     },
+    {
+      id: 7,
+      type: "2025",
+      img: "/project/Bobtory.png",
+      name: "밥토리 (웹/앱)",
+      introduce:
+        "간단한 혼밥 레벨 테스트로 나의 혼밥 성향을 알아보고, 1인 메뉴와 좌석 구조까지 한눈에 볼 수 있는 식당을 추천받으세요.",
+      function: [
+        "React Native",
+        "TypeScript",
+        "JavaScript",
+        "TailwindCSS",
+        "Expo",
+      ],
+    },
   ];
 
   return NextResponse.json(dummyData);
