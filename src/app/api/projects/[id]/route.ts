@@ -165,7 +165,7 @@ const dummyData = [
   },
   {
     id: 7,
-    img: "/project/Bobtory.png",
+    img: "/project/bobtory.png",
     name: "밥토리",
     introduce:
       "간단한 혼밥 레벨 테스트로 나의 혼밥 성향을 알아보고, 1인 메뉴와 좌석 구조까지 한눈에 볼 수 있는 식당을 추천받으세요.",
